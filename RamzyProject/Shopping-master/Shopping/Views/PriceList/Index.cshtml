@@ -1,0 +1,300 @@
+﻿
+@model ICollection<A_Service.Models.PriceList>
+
+
+
+<div class="page-content">
+    <div class="container-fluid">
+
+        <!-- start page title -->
+        <div class="row">
+            <div class="col-12">
+                <div class="page-title-box d-sm-flex align-items-center justify-content-between">
+
+
+                    <div class="page-title-right">
+                        <ol class="breadcrumb m-0">
+                            <li class="breadcrumb-item  "><h4 class="active">قوائم الأسعار الشركات </h4></li>
+                        </ol>
+
+
+                        <div class="page-title-right font-size-24 .font-weight-bold" asp-validation-summary="All">
+                        </div>
+                    </div>
+                    <h4 class="mb-sm-0 font-size-18">
+                        <button type="button" class="btn btn-success waves-effect" data-bs-toggle="modal" data-bs-target="#AddFile"> <i class="bx bx-plus font-size-16 align-middle me-2"></i> اضافة قائمه جديده</button>
+                    </h4>
+
+                </div>
+            </div>
+        </div>
+        <!-- end page title -->
+
+
+
+        <div class="row">
+            <div class="col-12">
+                <div class="card">
+                    <div class="card-body">
+
+                        <div class="table-responsive">
+
+                            <table id="datatable-buttons" class="table table-bordered dt-responsive nowrap w-100">
+                                <thead class="darkheadtable">
+                                    <tr>
+                                        <th><p class="widthdisplay">الكود</p></th>
+                                        <th><p class="widthdisplay"> اسم القائمه</p></th>
+                                        <th><p class="widthdisplay">اسم الشركه</p></th>
+                                        <th><p class="widthdisplay">وصف القائمه</p></th>
+                                        <th><p class="widthdisplay"> عرض القائمه</p></th>
+                                        <th><p class="widthdisplay">تحميل القائمه</p></th>
+                                        <th><p class="widthdisplay">Action</p></th>
+                                    </tr>
+                                </thead>
+
+
+                                <tbody>
+                                    @foreach (var item in Model)
+                                    {
+                                        <tr>
+                                            <td><p class="widthdisplay">@(Model.ToList().IndexOf(item)+1)</p></td>
+                                            @*<td><p class="widthdisplay">@item.Code</p></td>*@
+                                            <td><p class="widthdisplay">@item.Name</p></td>
+                                            <td><p class="widthdisplay">@item.Company?.Name</p></td>
+                                            <td><p class="widthdisplay">@item.Description</p></td>
+                                            <td>
+                                                <a href="~/priceLists/@item.FilePath" target="_blank" type="button" class="btn btn-primary waves-effect waves-light btn_historyPrice"> عرض القائمه </a>
+                                            </td>
+
+                                            <td>
+                                                <a asp-action="DownLoad" asp-route-id="@item.Id" class="btn btn-primary waves-effect waves-light btn_historyPrice"> تحميل القائمه </a>
+                                            </td>
+
+
+                                            <td>
+                                                <div class="dropdown">
+                                                    <button class="btn btn-grey nav-btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                                        <i class="bx bx-cog"></i>
+                                                    </button>
+                                                    <div class="dropdown-menu dropdown-menu-end">
+                                                        <a data-id="@item.Id" class="dropdown-item text-primary PriceList_EditBtn" @*data-bs-toggle="modal" data-bs-target="#EditeFile" href="#"*@><i class="bx bx-pencil font-size-16 align-middle ml-1 "></i>تعديل</a>
+                                                        <a data-id="@item.Id" class="dropdown-item text-danger PriceList_DeleteBtn" data-bs-toggle="modal" data-bs-target="#Deletmodal" href="#"><i class="bx bx-trash font-size-16 align-middle ml-1"></i>حذف</a>
+                                                    </div>
+                                                </div>
+                                            </td>
+                                        </tr>
+                                    }
+
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div> <!-- end col -->
+        </div> <!-- end row -->
+
+
+
+
+
+    </div> <!-- container-fluid -->
+</div>
+<!-- End Page-content -->
+
+<div id="AddFile" class="modal fade bs-example-modal-lg" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="myLargeModalLabel">اضافة قائمه</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <form asp-action="Add" enctype="multipart/form-data" id="addpriceList">
+                <div class="modal-body">
+
+                    <div class="row">
+                        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                            <div class="mb-3">
+                                <label class="form-label">اسم الشركه</label>
+                                <select name="CompanyId" asp-items="ViewBag.Companies" class="form-control select2" required>
+                                    <option value="">اختر شركة</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                            <div class="mb-3">
+                                <label for="verticalnav-firstname-input">اسم القائمه</label>
+                                <input type="Text" class="form-control" name="Name" id="" required>
+                            </div>
+                        </div>
+                        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+
+                            <div class="mb-3">
+                                <label for="formFile" class="form-label">تحميل القائمه</label>
+                                <input class="form-control" type="file" name="File" id="formFile" required>
+                            </div>
+                        </div>
+                        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                            <div class="mb-3">
+                                <label for="verticalnav-firstname-input">وصف القائمة</label>
+                                <textarea type="text" class="TextArea" name="Description" id=""></textarea>
+                            </div>
+                        </div>
+                    </div>
+
+
+                </div>
+                <div class="modal-footer">
+                    <button type="submit" class="btn btn-success waves-effect waves-light">  <i class="bx bx-check font-size-16 align-middle ml-1"></i> اضافه</button>
+                    <button type="button" class="btn btn-danger waves-effect" data-bs-dismiss="modal">
+                        <i class="bx bx-x font-size-16 align-middle ml-1"></i> اغلاق
+                    </button>
+
+                </div>
+            </form>
+        </div><!-- /.modal-content -->
+    </div><!-- /.modal-dialog -->
+</div>
+
+<div id="EditeFile" class="modal fade" tabindex="-1" aria-labelledby="myModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title mt-0" id="myModalLabel">تعديل القائمه</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <form asp-action="Update" enctype="multipart/form-data" id="editpriceF">
+                <div class="modal-body">
+                    <input type="hidden" id="Hidden_Id" name="Id"/>
+                    <div class="row">
+                        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                            <div class="mb-3">
+                                <label class="form-label">اسم الشركه</label>
+                                <select name="CompanyId" asp-items="ViewBag.Companies" id="Company_EditModal" class="form-control select2" required>
+                                    <option value="">اختر شركة</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                            <div class="mb-3">
+                                <label for="verticalnav-firstname-input">اسم القائمه</label>
+                                <input type="Text" class="form-control" id="Name_EditModal" name="Name" required>
+                            </div>
+                        </div>
+                        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+
+                            <div class="mb-3">
+                                <label for="formFile" class="form-label">تحميل القائمه</label>
+                                <input class="form-control" type="file" id="formFile" name="File">
+                            </div>
+                        </div>
+
+                        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                            <div class="mb-3">
+                                <label for="verticalnav-firstname-input">وصف القائمة</label>
+                                <textarea type="text" class="TextArea" name="Description" id="Descriptions_EditModal"></textarea>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+
+                <div class="modal-footer">
+                    <button type="submit" class="btn btn-success waves-effect waves-light">  <i class="bx bx-revision font-size-16 align-middle ml-1"></i> تحديث</button>
+                    <button type="button" class="btn btn-danger waves-effect" data-bs-dismiss="modal">
+                        <i class="bx bx-x font-size-16 align-middle ml-1"></i> اغلاق
+                    </button>
+
+                </div>
+            </form>
+        </div><!-- /.modal-content -->
+    </div><!-- /.modal-dialog -->
+</div>
+
+<div id="Deletmodal" class="modal fade" tabindex="-1" aria-labelledby="myModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <form asp-action="Delete" id="deletepriceList">
+            <input type="hidden" id="deletePriceListOnModal" name="Id" />
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title mt-0" id="myModalLabel">هل تريد حذف هذا المنتج</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+
+                <div class="modal-footer">
+                    <button type="submit" class="btn btn-danger waves-effect waves-light">  <i class="bx bx-trash font-size-16 align-middle ml-1"></i> حذف</button>
+                    <button type="button" class="btn btn-info waves-effect" data-bs-dismiss="modal">
+                        <i class="bx bx-x font-size-16 align-middle ml-1"></i> تراجع
+                    </button>
+
+                </div>
+            </div><!-- /.modal-content -->
+        </form>
+
+       
+    </div><!-- /.modal-dialog -->
+</div>
+
+
+@section Scripts{
+    <script>
+        $(document).ready(function () {
+
+            ///Update
+            $(".PriceList_EditBtn").click(function () {
+                resetUpdateModal();
+                let id = $(this).attr("data-id");
+                $("#Hidden_Id").val(id);
+
+                $.ajax({
+                    type: "GET",
+                    url: `/PriceList/GetById/${id}`,
+                    dataType: "json",
+                    contentType: "application/json",
+                    success: function (response) {
+                        console.log(response);
+                        bindData(response);
+                        $("#EditeFile").modal("show");
+                    },
+                    error: function (error) { console.log(error); }
+
+                })
+
+
+
+                //alert($("#id_EditModal").val());
+                //Swal.fire({
+                //    allowOutsideClick: false,
+                //    title: 'عملية ناجحة',
+                //    text: `تم بنجاح`,
+                //    icon: 'success',
+                //    confirmButtonText: 'تم'
+                //});
+            })
+
+            ///Delete
+            $(".PriceList_DeleteBtn").click(function () {
+                //alert($(this).attr("data-id"));
+                $("#deletePriceListOnModal").val($(this).attr("data-id"));
+            })
+
+
+            function resetUpdateModal() {
+                $("#Hidden_Id").val("");
+                $("#Company_EditModal").val("").trigger("change");
+                $("#Name_EditModal").val("");
+                $("#formFile").val("");
+                $("#Descriptions_EditModal").val("");
+            }
+
+
+            function bindData(response) {
+                //console.log(response);
+                $("#Company_EditModal").val(response.companyId).trigger("change");
+                $("#Name_EditModal").val(response.name);
+                $("#Descriptions_EditModal").val(response.descriptions);
+            }
+
+        })
+
+    </script>
+}

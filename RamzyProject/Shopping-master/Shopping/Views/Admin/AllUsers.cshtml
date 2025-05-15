@@ -1,0 +1,418 @@
+﻿
+@model ICollection<A_Service.ViewModels.UserDTO>
+
+
+<script src="https://ajax.aspnetcdn.com/ajax/jquery/jquery-2.2.0.min.js"></script>
+<script src="https://ajax.aspnetcdn.com/ajax/jquery.validate/1.16.0/jquery.validate.min.js"></script>
+<script src="https://ajax.aspnetcdn.com/ajax/jquery.validation.unobtrusive/3.2.6/jquery.validate.unobtrusive.min.js"></script>
+
+
+
+
+
+
+<div class="page-content">
+    <div class="container-fluid">
+
+        <!-- start page title -->
+        <div class="row">
+            <div class="col-12">
+                @*@if (TempData["errorAdmin"] != null)
+                    {
+                        <div class="success-centered" style="background-color:red;">
+                            <h1> @TempData["errorAdmin"]</h1>
+                        </div>
+                    }
+                    @if (TempData["success"] != null)
+                    {
+                        <div class="success-centered" style="background-color:green;">
+                            <h1> @TempData["success"]</h1>
+                        </div>
+                    }*@
+                <div class="page-title-box d-sm-flex align-items-center justify-content-between">
+
+
+                    <div class="page-title-right">
+                        <ol class="breadcrumb m-0">
+                            <li class="breadcrumb-item  "><h4 class="active">المستخدمين</h4></li>
+                        </ol>
+
+                        <div class="page-title-right font-size-24 .font-weight-bold" asp-validation-summary="All">
+                        </div>
+                    </div>
+                    <h4 class="mb-sm-0 font-size-18">
+                        <button type="button" class="btn btn-success waves-effect" data-bs-toggle="modal" data-bs-target="#AddUser"> <i class="bx bx-plus font-size-16 align-middle me-2"></i> اضافة مستخدم جديد</button>
+                    </h4>
+
+                </div>
+            </div>
+        </div>
+        <!-- end page title -->
+
+        <div class="row">
+            <div class="col-12">
+                <div class="card">
+                    <div class="card-body">
+
+                        <div class="table-responsive">
+
+                            <table id="datatable-buttons" class="table table-bordered dt-responsive nowrap w-100">
+                                <thead class="darkheadtable">
+                                    <tr>
+                                        <th><p class="widthdisplay">#</p></th>
+                                        @*<th><p class="widthdisplay">كود المنتج</p></th>*@
+                                        <th><p class="widthdisplay">اسم المستخدم</p></th>
+                                        <th><p class="widthdisplay"> رقم الهاتف</p></th>
+                                        <th><p class="widthdisplay">المجموعه </p></th>
+
+                                        <th><p class="widthdisplay">Action</p></th>
+                                    </tr>
+                                </thead>
+
+
+                                <tbody>
+
+
+                                    @foreach (var item in Model)
+                                    {
+                                        <tr>
+                                            <td><p class="widthdisplay">@(Model.ToList().IndexOf(item)+1)</p></td>
+                                            @*<td><p class="widthdisplay">@item.Code</p></td>*@
+                                            <td><p class="widthdisplay">@item.Username</p></td>
+                                            <td><p class="widthdisplay">@item.PhoneNumber</p></td>
+                                            <td>
+                                                <p class="widthdisplay">
+
+                                                    @*<td><p class="widthdisplay">@item.RoleName</p></td>*@
+
+                                                    @if (item.Roles != null)
+                                                        @for (var i = 0; i < item.Roles.Length; i++)
+                                                        {
+                                                            var teslength = i;
+                                                            if (@item.Roles[i].Name == "Admin")
+                                                            {
+                                                                <span>ادمن</span>
+
+                                                            }
+                                                            else
+                                                            {
+                                                                <span>مستخدم</span>
+
+                                                            }
+                                                            @*if (item.Roles.Length != ++teslength)
+                                                                {
+                                                                    <span> , </span>
+                                                                }*@
+                                                        }
+
+                                                </p>
+                                            </td>
+
+
+                                            <td>
+                                                <div class="dropdown">
+                                                    <button class="btn btn-grey nav-btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                                        <i class="bx bx-cog"></i>
+                                                    </button>
+                                                    <div class="dropdown-menu dropdown-menu-end">
+                                                        <a data-id="@item.Id" class="dropdown-item text-primary updateUser" onclick="ResetPasswordNew('@item.Username')" data-bs-toggle="modal" data-bs-target="#ResetPassword"><i class="bx bx-pencil font-size-16 align-middle ms-1 "></i>تغيير كلمة المرور</a>
+                                                        <a data-id="@item.Id" class="dropdown-item text-danger deleteUser" data-bs-toggle="modal" data-bs-target="#Deletmodal" href="#"><i class="bx bx-trash font-size-16 align-middle ms-1"></i>حذف</a>
+                                                    </div>
+                                                </div>
+                                            </td>
+                                        </tr>
+
+                                    }
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div> <!-- end col -->
+        </div>
+
+    </div>
+</div>
+<!-- End Page-content -->
+
+
+<div id="ResetPassword" class="modal fade" tabindex="-1" aria-labelledby="myModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="myLargeModalLabel"> تغيير كلمة المرور </h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+
+            @using (Html.BeginForm("ResetPassword", "Admin", FormMethod.Post, new { enctype = "multipart/form-data", @Class = "form-horizontal ", id = "frmPersonData" }))
+            {
+
+                @Html.AntiForgeryToken()
+                <div asp-validation-summary="ModelOnly">
+                    <span>Please correct the following errors</span>
+                </div>
+                <div class="modal-body">
+                    <input type="hidden" id="id_EditModal" name="Id" />
+                    <div class="row">
+
+                        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                            <div class="mb-3">
+                                <label class="form-label">اسم المستخدم </label>
+                                <input type="text" class="form-control" id="PUserName" name="PUserName" hidden />
+                                <input type="text" class="form-control" id="newName" name="newName" />
+
+
+                            </div>
+                        </div>
+                        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                            <div class="mb-3">
+                                <label for="Password" class="col-sm-4 control-label">كلمة المرور الجديدة</label>
+                                <input type="password" id="NewPassword" name="NewPassword" required class="form-control" />
+
+                            </div>
+                        </div>
+
+                        @*<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                                <div class="mb-3">
+                                    <label for="verticalnav-firstname-input">تاكيد كلمة المرور</label>
+                                    <input type="password" id="ConfirmPassword" name="ConfirmPassword" required class="form-control" />
+                                </div>
+                            </div>*@
+
+
+                    </div>
+
+
+                </div>
+                <div class="modal-footer">
+                    <button type="submit" class="btn btn-success waves-effect waves-light">  <i class="bx bx-revision  font-size-16 align-middle ml-1"></i> تحديث</button>
+                    <button type="button" class="btn btn-danger waves-effect" data-bs-dismiss="modal">
+                        <i class="bx bx-x font-size-16 align-middle ml-1"></i> اغلاق
+                    </button>
+
+                </div>
+            }
+        </div><!-- /.modal-content -->
+    </div><!-- /.modal-dialog -->
+</div>
+
+<div id="AddUser" class="modal fade bs-example-modal-lg" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
+    <!-- HTML -->
+
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+
+            <div class="modal-header">
+                <h5 class="modal-title" id="myLargeModalLabel">اضافة مستخدم</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+
+            @Html.Partial("_AddUser", new A_Service.ViewModels.UserDTO())
+
+            <!--<form  asp-action="CreateUserAsync" enctype="multipart/form-data"  method="post">
+            <input type="hidden" id="Id" name="Id" />
+            <input type="hidden" id="Role" name="Role" />-->
+            @*<input type="hidden" id="IsAdmin" name="IsAdmin" />*@
+
+
+            <!--<div class="modal-body">
+
+            <div class="row">
+
+                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                    <div class="mb-3">
+                        <label class="form-label">اسم المستخدم</label>
+                        <input type="text" class="form-control" id="Username" name="Username" required>
+
+
+                    </div>
+                </div>
+                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                    <div class="mb-3">
+                        <label class="form-label">المجموعه</label>-->
+            @*@foreach (var role in ViewBag.Roles)
+                {
+                    <div class="check-container" style="display:inline-block;">
+                        <label>@role.Name</label>
+                        <input type="checkbox" name="roles" value="@role.Id" />
+
+                    </div>
+                }*@
+            <!--</div>
+                        </div>
+
+                        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                            <div class="mb-3">
+                                <label for="verticalnav-firstname-input">الاميل</label>
+                                <input type="text" class="form-control" id="Email" name="Email" required>
+                            </div>
+                        </div>
+
+                        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                            <div class="mb-3">
+                                <label class="form-label">كلمه المرور</label>
+                                <input type="password" name="Password" minlength="6" id="Password" class="form-control" required placeholder="Enter password" aria-label="Password" aria-describedby="password-addon">
+                            </div>
+                        </div>
+                        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                            <div class="mb-3">
+                                <label class="form-label">تاكيد كلمه المرور</label>
+                                <input type="password" name="ConfirmPassword" id="ConfirmPassword" class="form-control" required placeholder="Enter password" aria-label="Password" aria-describedby="password-addon">
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+
+                <div class="modal-footer">
+                    <button type="submit" class="btn btn-success waves-effect waves-light">  <i class="bx bx-check font-size-16 align-middle ml-1"></i> اضافه</button>
+                    <button type="button" class="btn btn-danger waves-effect" data-bs-dismiss="modal">
+                        <i class="bx bx-x font-size-16 align-middle ml-1"></i> اغلاق
+                    </button>
+
+                </div>
+            </form>-->
+
+
+        </div><!-- /.modal-content -->
+    </div><!-- /.modal-dialog -->
+</div><!-- /.modal -->
+
+
+<div id="Deletmodal" class="modal fade" tabindex="-1" aria-labelledby="myModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+
+            <form asp-controller="Admin" asp-action="DeleteConfirmed" method="post" id="formDelete">
+                <div class="modal-header">
+                    <h5 class="modal-title mt-0" id="myModalLabel">هل تريد حذف هذا المستخدم</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+
+                <div class="modal-footer">
+                    <input type="hidden" id="deleteUserOnModal" name="id" />
+                    <button type="submit" class="btn btn-danger waves-effect waves-light">  <i class="bx bx-trash font-size-16 align-middle ml-1"></i> حذف</button>
+                    <button type="button" class="btn btn-info waves-effect" data-bs-dismiss="modal">
+                        <i class="bx bx-x font-size-16 align-middle ml-1"></i> تراجع
+                    </button>
+                </div>
+            </form>
+
+        </div><!-- /.modal-content -->
+    </div><!-- /.modal-dialog -->
+</div>
+
+
+
+@section Scripts{
+
+
+    <script>
+        $(function () {
+            $('#addUserForm').submit(function (e) {
+                debugger
+                if ($('#addUserForm').valid()) {
+                    //Do something here
+                    spinner.show();
+                    return true;
+                } else {
+                    $("#ConfirmPassword-error").css("display", "none");
+                    $("#PhoneNumber-error").css("display", "none");
+                    return false;
+
+                }
+               
+
+            });
+        });
+        //$("#addUserForm").submit(function () {
+        //    $("#ConfirmPassword-error").css("display", "none");
+
+        //    var result = [];
+        //    $('input[name="roles"]:checked').each(function () {
+
+        //        result.push(this.value);
+        //    });
+        //    if (result.length <= 0) {
+
+        //        $("#ErrorSpan").css("display", "block");
+        //        return false;
+        //    }
+
+        //});
+
+        $(document).ready(function () {
+            $(".deleteUser").click(function () {
+                //alert($(this).attr("data-id"));
+                $("#deleteUserOnModal").val($(this).attr("data-id"));
+            })
+
+
+            ///Update
+            $(".updateUser").click(function () {
+                resetUpdateModal();
+                let id = $(this).attr("data-id");
+                $("#id_EditModal").val(id);
+
+                $.ajax({
+                    type: "GET",
+                    url: `/Admin/GetUser/${id}`,
+                    dataType: "json",
+                    contentType: "application/json",
+                    success: function (response) {
+                        console.log(response);
+                        bindData(response);
+                        $("#ResetPassword").modal("show");
+                    },
+                    error: function (error) { console.log(error); }
+
+                })
+
+
+
+
+            })
+
+
+
+
+
+
+            function resetUpdateModal() {
+                $("#Id").val("");
+                $("#Username").val("");
+                $("#Email").val("");
+                $("#Role").val("");
+
+            }
+
+
+            function bindData(response) {
+                //console.log(response);
+                $("#Id").val(response.id);
+                $("#Username").val(response.username);
+                $("#Email").val(response.email);
+                $("#Role").val(response.role);
+
+            }
+
+            function EditInfo(oldUserName) {
+                $("#oldUserName").val(oldUserName);
+            }
+
+
+        })
+        function ResetPasswordNew(PUserName) {
+            debugger
+            $("#PUserName").val(PUserName);
+            $("#newName").val(PUserName);
+
+
+        }
+    </script>
+
+}
+
+
+
+

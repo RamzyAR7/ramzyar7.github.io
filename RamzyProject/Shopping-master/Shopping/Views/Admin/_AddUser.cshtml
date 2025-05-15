@@ -1,0 +1,85 @@
+﻿
+@model A_Service.ViewModels.UserDTO
+
+
+<form asp-action="CreateUser" enctype="multipart/form-data" id="addUserForm" method="post">
+ 
+    <input type="hidden" asp-for="Id" />
+    <input type="hidden" asp-for="Role" />
+    @*<input type="hidden" id="IsAdmin" name="IsAdmin" />*@
+    <div asp-validation-summary="ModelOnly">
+        <span>Please correct the following errors</span>
+    </div>
+
+    <div class="modal-body">
+
+        <div class="row">
+
+            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                <div class="mb-3">
+                    <label class="form-label">اسم المستخدم</label>
+                    <input type="text" class="form-control" asp-for="Username" required>
+                    <span asp-validation-for="Username"></span>
+
+
+                </div>
+            </div>
+            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                <div class="mb-3">
+                    <label class="form-label">المجموعه</label>
+
+                    <select name="idrole" asp-items="ViewBag.Roles" id="idrole" class="form-control select2" required>
+                    </select>
+                    <span asp-validation-for="idrole"></span>
+
+                    @*@foreach (var role in ViewBag.Roles)
+        {
+            <div class="check-container" style="display:inline-block;">
+                <label>@role.Name</label>
+                <input type="checkbox" name="roles" id="role" value="@role.Id" />
+
+            </div>
+        }*@
+                    @*<span id="ErrorSpan" style="display:none">يجب اختيار مجموعه</span>*@
+                </div>
+            </div>
+
+            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                <div class="mb-3">
+                    <label for="verticalnav-firstname-input">رقم الهاتف</label>
+                    <input type="text" class="form-control onlyNumbers" asp-for="PhoneNumber" required />
+                    <span asp-validation-for="PhoneNumber"></span>
+
+                </div>
+            </div>
+
+            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                <div class="mb-3">
+                    <label class="form-label">كلمه المرور</label>
+                    <input type="password" asp-for="Password" minlength="6" class="form-control" required placeholder="Enter password" aria-label="Password" aria-describedby="password-addon" />
+                    <span asp-validation-for="Password"></span>
+
+                </div>
+            </div>
+            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                <div class="mb-3">
+                    <label class="form-label">تاكيد كلمه المرور</label>
+                    <input type="password" asp-for="ConfirmPassword" class="form-control" required placeholder="Enter password" aria-label="Password" aria-describedby="password-addon" />
+                    <span asp-validation-for="ConfirmPassword"></span>
+
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+    <div class="modal-footer">
+        <button type="submit" class="btn btn-success waves-effect waves-light">  <i class="bx bx-check font-size-16 align-middle ml-1"></i> اضافه</button>
+        <button type="button" class="btn btn-danger waves-effect" data-bs-dismiss="modal">
+            <i class="bx bx-x font-size-16 align-middle ml-1"></i> اغلاق
+        </button>
+
+    </div>
+</form>
+
+

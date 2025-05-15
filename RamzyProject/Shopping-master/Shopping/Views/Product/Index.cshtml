@@ -1,0 +1,1066 @@
+﻿@*@model ICollection<A_Service.Models.Product>*@
+@model ICollection<A_Service.ViewModels.ProductViewModel>
+@*<link rel="stylesheet" href="~/dist/image-uploader.min.css">*@
+
+<div class="page-content">
+    <div class="container-fluid">
+
+        <!-- start page title -->
+        <div class="row">
+            <div class="col-12">
+                <div class="page-title-box d-sm-flex align-items-center justify-content-between">
+
+
+                    <div class="page-title-right">
+                        <ol class="breadcrumb m-0">
+                            <li class="breadcrumb-item  "><h4 class="active">المنتجات</h4></li>
+                        </ol>
+
+                        <div class="page-title-right font-size-24 .font-weight-bold" asp-validation-summary="All">
+                        </div>
+                    </div>
+
+                    @if (User.IsInRole("Admin"))
+                    {
+                        <h4 class="mb-sm-0 font-size-18">
+                            <button type="button" class="btn btn-success waves-effect" data-bs-toggle="modal" data-bs-target="#AddProdcut"> <i class="bx bx-plus font-size-16 align-middle me-2"></i> اضافة منتج جديد</button>
+                        </h4>
+                    }
+                    </div>
+            </div>
+        </div>
+        <!-- end page title -->
+
+        <div class="row">
+            <div class="col-12">
+                <div class="card">
+                    <div class="card-body">
+
+                        <div class="table-responsive">
+
+                            <table id="datatable-buttons" class="table table-bordered dt-responsive nowrap w-100">
+                                <thead class="darkheadtable">
+                                    <tr>
+                                        <th><p class="widthdisplay">#</p></th>
+                                        @*<th><p class="widthdisplay">كود المنتج</p></th>*@
+                                        <th><p class="widthdisplay">اسم المنتج</p></th>
+                                        <th><p class="widthdisplay"> الفئه</p></th>
+                                        <th><p class="widthdisplay">اسم الشركه</p></th>
+                                        @if (User.IsInRole("Admin"))
+                                        {
+                                            <th><p class="widthdisplay">سعر الشراء</p></th>
+                                      
+                                        @*<th><p class="widthdisplay"> سعر البيع الجمله</p></th>
+                                        <th><p class="widthdisplay"> سعر البيع النص جمله</p></th>*@
+                                        }
+                                        <th><p class="widthdisplay">سعر البيع</p></th>
+                                        <th><p class="widthdisplay"> الملاحظات</p></th>
+                                        <th><p class="widthdisplay">تاريخ الاضافه</p></th>
+                                        @if (User.IsInRole("Admin"))
+                                        {
+                                            <th><p class="widthdisplay"> تحديث السعر</p></th>
+                                        }
+                                        <th><p class="widthdisplay">تاريخ الاسعار</p></th>
+                                        <th><p class="widthdisplay">تفاصيل المنتج</p></th>
+                                        @if (User.IsInRole("Admin"))
+                                        {
+                                            <th><p class="widthdisplay">Action</p></th>
+                                        }
+                                        </tr>
+                                </thead>
+
+
+                                <tbody>
+
+
+                                    @foreach (var item in Model)
+                                    {
+                                    <tr>
+                                        <td><p class="widthdisplay">@(Model.ToList().IndexOf(item)+1)</p></td>
+                                        @*<td><p class="widthdisplay">@item.Code</p></td>*@
+                                        <td><p class="widthdisplay">@item.Name</p></td>
+                                        <td><p class="widthdisplay">@item.CategoryName</p></td>
+                                        <td><p class="widthdisplay">@item.CompanyName</p></td>
+
+                                        @*<td><p class="widthdisplay">@item.PurchasingPrice</p></td>
+        <td><p class="widthdisplay">@item.GomlaPrice</p></td>
+        <td><p class="widthdisplay">@item.NosGomlaPrice</p></td>
+        <td><p class="widthdisplay">@item.SellingPrice</p></td>*@
+                                        @if (User.IsInRole("Admin"))
+                                        {
+                                            <td><p class="widthdisplay">@item.Prices?.Where(a => a.IsActive is true).FirstOrDefault()?.PurchasingPrice</p></td>
+                                       
+                                        @*<td><p class="widthdisplay">@item.Prices?.Where(a => a.IsActive is true).FirstOrDefault()?.GomlaPrice</p></td>
+                                        <td><p class="widthdisplay">@item.Prices?.Where(a => a.IsActive is true).FirstOrDefault()?.NosGomlaPrice</p></td>*@
+                                        }
+                                        <td><p class="widthdisplay">@item.Prices?.Where(a => a.IsActive is true).FirstOrDefault()?.SellingPrice</p></td>
+                                        <td><p class="widthdisplay Width200">@item.Description</p></td>
+                                        <td><p class="widthdisplay">@item.CreatedDate.ToShortDateString()</p></td>
+                                        @if (User.IsInRole("Admin"))
+                                        {
+                                            <td>
+                                                <button type="button"  data-id="@item.Id" class="btn btn-primary waves-effect waves-light rounded btnWidthmax updatePrice_btn" @*data-bs-toggle="modal" data-bs-target="#UpdatePrice"*@> تحديث السعر </button>
+                                            </td>
+                                        }
+
+                                        <td>
+                                            <button type="button" data-id="@item.Id" class="btn btn-primary waves-effect waves-light rounded btnWidthmax historyPrice_btn" @*data-bs-toggle="modal" data-bs-target="#HisstoryPrice"*@> تاريخ الاسعار </button>
+                                        </td>
+                                        <td>
+                                            <a asp-action="ProductDetails" asp-route-id="@item.Id" class="btn btn-primary waves-effect rounded btnWidthmax waves-light historyPrice_btn"> تفاصيل المنتج </a>
+                                        </td>
+                                        @if (User.IsInRole("Admin"))
+                                        {
+                                            <td>
+                                                <div class="dropdown">
+                                                    <button class="btn btn-grey nav-btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                                        <i class="bx bx-cog"></i>
+                                                    </button>
+                                                    <div class="dropdown-menu dropdown-menu-end">
+                                                        <a data-id="@item.Id" class="dropdown-item text-primary updateProduct" @*data-bs-toggle="modal" data-bs-target="#editeEail"*@><i class="bx bx-pencil font-size-16 align-middle ms-1 "></i>تعديل</a>
+                                                        <a data-id="@item.Id" class="dropdown-item text-danger deleteProduct" data-bs-toggle="modal" data-bs-target="#Deletmodal" href="#"><i class="bx bx-trash font-size-16 align-middle ms-1"></i>حذف</a>
+                                                    </div>
+                                                </div>
+                                            </td>
+                                        }
+                                        </tr>
+
+                                    }
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div> <!-- end col -->
+        </div>
+
+    </div>
+</div>
+<!-- End Page-content -->
+<!-- Modal -->
+<div class="modal fade transaction-detailModal" tabindex="-1" role="dialog" aria-labelledby="transaction-detailModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="transaction-detailModalLabel">Order Details</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <p class="mb-2">Product id: <span class="text-primary">#SK2540</span></p>
+                <p class="mb-4">Billing Name: <span class="text-primary">Neal Matthews</span></p>
+
+                <div class="table-responsive">
+                    <table class="table align-middle table-nowrap">
+                        <thead>
+                            <tr>
+                                <th scope="col">Product</th>
+                                <th scope="col">Product Name</th>
+                                <th scope="col">Price</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <th scope="row">
+                                    <div>
+                                        <img src="~/images/product/img-7.png" alt="" class="avatar-sm">
+                                    </div>
+                                </th>
+                                <td>
+                                    <div>
+                                        <h5 class="text-truncate font-size-14">Wireless Headphone (Black)</h5>
+                                        <p class="text-muted mb-0">$ 225 x 1</p>
+                                    </div>
+                                </td>
+                                <td>$ 255</td>
+                            </tr>
+                            <tr>
+                                <th scope="row">
+                                    <div>
+                                        <img src="~/images/product/img-4.png" alt="" class="avatar-sm">
+                                    </div>
+                                </th>
+                                <td>
+                                    <div>
+                                        <h5 class="text-truncate font-size-14">Phone patterned cases</h5>
+                                        <p class="text-muted mb-0">$ 145 x 1</p>
+                                    </div>
+                                </td>
+                                <td>$ 145</td>
+                            </tr>
+                            <tr>
+                                <td colspan="2">
+                                    <h6 class="m-0 text-right">Sub Total:</h6>
+                                </td>
+                                <td>
+                                    $ 400
+                                </td>
+                            </tr>
+                            <tr>
+                                <td colspan="2">
+                                    <h6 class="m-0 text-right">Shipping:</h6>
+                                </td>
+                                <td>
+                                    Free
+                                </td>
+                            </tr>
+                            <tr>
+                                <td colspan="2">
+                                    <h6 class="m-0 text-right">Total:</h6>
+                                </td>
+                                <td>
+                                    $ 400
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- end modal -->
+
+<div class="modal fade bs-example-modal-xl" tabindex="-1" role="dialog" aria-labelledby="myExtraLargeModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-xl">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="myExtraLargeModalLabel">تاريخ اسعار المنتج</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <div class="mb-3 row">
+                    <div class="table-responsive">
+                        <table id="datatable" class="table table-hover table-bordered ">
+                            <thead class="darkheadtable">
+                                <tr>
+                                    <th><p class="widthdisplay">#</p></th>
+                                    <th><p class="widthdisplay">اسم المنتج</p></th>
+                                    <th><p class="widthdisplay">النوع</p></th>
+                                    <th><p class="widthdisplay">السعر</p></th>
+                                    <th><p class="widthdisplay">تاريخ التحديث</p></th>
+                                    <th><p class="widthdisplay">Action</p></th>
+                                </tr>
+                            </thead>
+
+
+                            <tbody>
+                                <tr>
+                                    <td><p class="widthdisplay">1</p></td>
+                                    <td><p class="widthdisplay"> TV</p></td>
+                                    <td><p class="widthdisplay">Electrics	</p></td>
+                                    <td><p class="widthdisplay">ssss</p></td>
+                                    <td><p class="widthdisplay">LG TV</p></td>
+
+
+                                    <td>
+                                        <div class="dropdown">
+                                            <button class="btn btn-grey nav-btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                                <i class="bx bx-dots-horizontal-rounded"></i>
+                                            </button>
+                                            <div class="dropdown-menu dropdown-menu-end">
+
+
+                                                <a class="dropdown-item"><i class="bx bx-printer font-size-16 align-middle ml-1 "></i>Print</a>
+
+
+
+                                                <a class="dropdown-item" href="#"><i class="bx bx-mail-send font-size-16 align-middle ml-1 "></i>SMS</a>
+
+
+                                                <a class="dropdown-item text-danger" data-bs-toggle="modal" data-bs-target="#Deletmodal" href="#"><i class="bx bx-trash font-size-16 align-middle ml-1"></i>Delete</a>
+
+
+
+                                            </div>
+                                        </div>
+                                    </td>
+                                </tr>
+
+                            </tbody>
+                        </table>
+
+                    </div>
+                </div>
+            </div>
+        </div><!-- /.modal-content -->
+    </div><!-- /.modal-dialog -->
+</div>
+
+<div id="editeEail" class="modal fade" tabindex="-1" aria-labelledby="myModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="myLargeModalLabel">تعديل منتج</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+
+            
+            <form asp-controller="Product" asp-action="Edit" enctype="multipart/form-data" id="editproductimage" method="post">
+                <div class="modal-body">
+                    <input type="hidden" id="id_EditModal" name="Id" />
+                    <div class="row">
+
+                        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                            <div class="mb-3">
+                                <label class="form-label">الشركه</label>
+                                <select name="CompanyId" asp-items="ViewBag.Companies" id="companies_EditModal" class="form-control select2" required>
+                                    <option value="">اختر شركة</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                            <div class="mb-3">
+                                <label class="form-label">الفئه</label>
+                                <select name="CategoryId" asp-items="ViewBag.Categories" id="categories_EditModal" class="form-control select2" required>
+                                    <option value="">اختر فئة</option>
+                                </select>
+                            </div>
+                        </div>
+
+                        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                            <div class="mb-3">
+                                <label for="verticalnav-firstname-input">اسم المنتج</label>
+                                <input type="text" class="form-control" id="productName_EditModal" name="Name" required>
+                            </div>
+                        </div>
+
+                        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                            <div class="row">
+                                <div class="col-lg-3 col-md-3 col-sm-3 col-xs-12">
+                                    <div class="mb-3">
+                                        <label for="verticalnav-firstname-input">سعر الشراء </label>
+                                        <input type="text" class="form-control" id="productPurchasingPrice_EditModal" name="PurchasingPrice" required>
+                                    </div>
+                                </div>
+                                <div class="col-lg-3 col-md-3 col-sm-3 col-xs-12">
+                                    <div class="mb-3">
+                                        <label for="verticalnav-firstname-input">سعر البيع </label>
+                                        <input type="text" class="form-control" id="productSellingPrice_EditModal" name="SellingPrice" required>
+                                    </div>
+                                </div>
+                                @*<div class="col-lg-3 col-md-3 col-sm-3 col-xs-12" id="editp">
+                                    <div class="mb-3">
+                                        <label for="verticalnav-firstname-input">سعر البيع الجمله </label>
+                                        <input type="text" class="form-control" id="productGomlaPrice_EditModal" name="GomlaPrice">
+                                    </div>
+                                </div>
+                                <div class="col-lg-3 col-md-3 col-sm-3 col-xs-12" id="editp2">
+                                    <div class="mb-3">
+                                        <label for="verticalnav-firstname-input">سعر البيع النص جمله </label>
+                                        <input type="text" class="form-control" id="productNosGomlaPrice_EditModal" name="NosGomlaPrice">
+                                    </div>
+                                </div>*@
+
+                            </div>
+                        </div>
+
+                        @*<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+            <div class="mb-3">
+                <label for="productImages">صور المنتج </label>
+                <input type="file" accept="image/*" multiple class="form-control" id="productImages_EditModal" name="productImages" />
+            </div>
+        </div>*@
+
+                        @*@Html.Partial("_EditProductPartial")*@
+
+                        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                            <div class="mb-3">
+                                <div class="input-field">
+                                    <label for="productImages">صور المنتج </label>
+                                    <div class="input-images-edit-2" style="padding-top: .5rem;"></div>
+
+                                </div>
+                                <input type="file" accept="image/*" multiple class="form-control" id="productImages_EditModal" name="productImages" hidden />
+                                @*<select name="oldImage" id="oldImage">
+
+                                </select>*@
+                                <input type="text" id="oldImageString" name="oldImageString" hidden/>
+                            </div>
+                        </div>
+                        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                            <div class="mb-3">
+                                <label for="verticalnav-firstname-input">الملاحظات </label>
+                                <textarea type="text" class="TextArea" id="productDescriptions_EditModal" name="Description" ></textarea>
+                            </div>
+                        </div>
+                    </div>
+
+
+                </div>
+                <div class="modal-footer">
+                    <button type="submit" class="btn btn-success waves-effect waves-light">  <i class="bx bx-revision  font-size-16 align-middle ml-1"></i> تحديث</button>
+                    <button type="button" class="btn btn-danger waves-effect" data-bs-dismiss="modal">
+                        <i class="bx bx-x font-size-16 align-middle ml-1"></i> اغلاق
+                    </button>
+
+                </div>
+            </form>
+        </div><!-- /.modal-content -->
+    </div><!-- /.modal-dialog -->
+</div>
+
+<div id="AddProdcut" class="modal fade bs-example-modal-lg" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="myLargeModalLabel">اضافة منتج</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+
+            <form asp-controller="Product" asp-action="Add" id="addproductimage" enctype="multipart/form-data" method="post">
+                <div class="modal-body">
+
+                    <div class="row">
+
+                        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                            <div class="mb-3">
+                                <label class="form-label">الشركه</label>
+
+                                <select name="CompanyId" asp-items="ViewBag.Companies" id="companies_AddModal" class="form-control select2" required>
+                                    <option value="">اختر شركة</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                            <div class="mb-3">
+                                <label class="form-label">الفئه</label>
+
+                                <select name="CategoryId" asp-items="ViewBag.Categories" id="categories_AddModal" class="form-control select2" required>
+                                    <option value="">اختر فئة</option>
+                                </select>
+                            </div>
+                        </div>
+
+                        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                            <div class="mb-3">
+                                <label for="verticalnav-firstname-input">اسم المنتج</label>
+                                <input type="text" class="form-control" id="productName_AddModal" name="Name" required>
+                            </div>
+                        </div>
+
+                        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                            <div class="row">
+                                <div class="col-lg-3 col-md-3 col-sm-3 col-xs-12">
+                                    <div class="mb-3">
+                                        <label for="verticalnav-firstname-input">سعر الشراء </label>
+                                        <input type="text" class="form-control" id="productPurchasingPrice_AddModal" name="PurchasingPrice" required>
+                                    </div>
+                                </div>
+                                <div class="col-lg-3 col-md-3 col-sm-3 col-xs-12">
+                                    <div class="mb-3">
+                                        <label for="verticalnav-firstname-input">سعر البيع </label>
+                                        <input type="text" class="form-control" id="productSellingPrice_AddModal" name="SellingPrice" required>
+                                    </div>
+                                </div>
+                                <div class="col-lg-3 col-md-3 col-sm-3 col-xs-12">
+                                    <div class="mb-3">
+                                        <label for="verticalnav-firstname-input" id="b1">سعر البيع الجمله </label>
+                                        <input type="text" class="form-control" id="productGomlaPrice_AddModal" name="GomlaPrice">
+                                    </div>
+                                </div>
+                                <div class="col-lg-3 col-md-3 col-sm-3 col-xs-12">
+                                    <div class="mb-3">
+                                        <label for="verticalnav-firstname-input" id="b2">سعر البيع النص جمله </label>
+                                        <input type="text" class="form-control" id="productNosGomlaPrice_AddModal" name="NosGomlaPrice">
+                                    </div>
+                                </div>
+                                <div class="custom-control custom-checkbox">
+                                    <input type="checkbox" class="custom-control-input" onclick="onClickHandler()" id="box">
+                                    <label class="custom-control-label" for="customCheck1">سعر الجمله اختيارى</label>
+                                </div>
+
+                            </div>
+                        </div>
+
+                        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                            <div class="mb-3">
+                                <div class="input-field">
+                                    <label for="productImages">صور المنتج </label>
+                                    <div class="input-images-2" style="padding-top: .5rem;"></div>
+
+                                </div>
+                                @*<label for="productImages">صور المنتج </label>*@
+                                <input type="file" accept="image/*" class="form-control" id="productImages_AddModal" name="photos" hidden />
+
+                            </div>
+                        </div>
+
+                        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                            <div class="mb-3">
+                                <label for="verticalnav-firstname-input">الملاحظات </label>
+                                <textarea type="text" class="TextArea" id="productDescriptions_AddModal" name="Description" ></textarea>
+                            </div>
+                        </div>
+
+
+                    </div>
+                </div>
+
+                <div class="modal-footer">
+                    <button type="submit" class="btn btn-success waves-effect waves-light">  <i class="bx bx-check font-size-16 align-middle ml-1"></i> اضافه</button>
+                    <button type="button" class="btn btn-danger waves-effect" data-bs-dismiss="modal">
+                        <i class="bx bx-x font-size-16 align-middle ml-1"></i> اغلاق
+                    </button>
+
+                </div>
+            </form>
+
+        </div><!-- /.modal-content -->
+    </div><!-- /.modal-dialog -->
+</div><!-- /.modal -->
+
+<div id="HisstoryPrice" class="modal fade bs-example-modal-xl" tabindex="-1" role="dialog" aria-labelledby="myExtraLargeModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-xl">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="myExtraLargeModalLabel">تاريخ اسعار المنتج</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <div class="row mb-3">
+                    <div class="col-lg-12">
+                        <div class="row">
+                            <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
+                                <div class="productDetaisl">
+                                    <label class="font-weight-bold font-size-20">كود المنتج :-</label>
+                                    <label class="font-weight-bold font-size-15 priceHistory_Labels" id="lbl_Code">122</label>
+                                </div>
+                            </div>
+                            <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
+                                <div class="productDetaisl">
+                                    <label class="font-weight-bold font-size-20"> اسم الشركه :-</label>
+                                    <label class="font-weight-bold font-size-15 priceHistory_Labels" id="lbl_Company">122</label>
+                                </div>
+                            </div>
+                            <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
+                                <div class="productDetaisl">
+                                    <label class="font-weight-bold font-size-20"> الفئه :-</label>
+                                    <label class="font-weight-bold font-size-15 priceHistory_Labels" id="lbl_Category">122</label>
+                                </div>
+                            </div>
+                            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                                <div class="productDetaisl">
+                                    <label class="font-weight-bold font-size-20">اسم المنتج :-</label>
+                                    <label class="font-weight-bold font-size-15 priceHistory_Labels" id="lbl_Name">122</label>
+                                </div>
+                            </div>
+
+                        </div>
+
+
+                    </div>
+                </div>
+                <div class="mb-3 row">
+                    <div class="table-responsive">
+                        <table id="PriceHistory_Table" class="table table-hover table-bordered ">
+                            <thead class="darkheadtable">
+                                <tr>
+                                    @*<th><p class="widthdisplay">الكود</p></th>*@
+                                    @if (User.IsInRole("Admin"))
+                                    {
+                                        <th><p class="widthdisplay">سعر الشراء</p></th>
+
+                                        <th><p class="widthdisplay">سعر بيع الجمله</p></th>
+                                        <th><p class="widthdisplay">سعر بيع النص جمله</p></th>
+                                    }
+                                    <th><p class="widthdisplay">سعر البيع  </p></th>
+                                    <th><p class="widthdisplay"> تاريخ الاضافه  </p></th>
+                                    @if (User.IsInRole("Admin"))
+                                    {
+                                        <th><p class="widthdisplay">Action</p></th>
+                                    }
+                                    </tr>
+                            </thead>
+
+                            <tbody>
+                                @*<tr>
+                                        <td>
+                                            <div class="dropdown">
+                                                <button class="btn btn-grey nav-btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                                    <i class="bx bx-cog"></i>
+                                                </button>
+                                                <div class="dropdown-menu dropdown-menu-end">
+                                                    <a class="dropdown-item text-danger" data-bs-toggle="modal" data-bs-target="#Deletmodal" href="#"><i class="bx bx-trash font-size-16 align-middle ml-1"></i>حذف</a>
+                                                </div>
+                                            </div>
+                                        </td>
+                                    </tr>*@
+                            </tbody>
+                        </table>
+
+                    </div>
+                </div>
+
+            </div>
+        </div><!-- /.modal-content -->
+    </div><!-- /.modal-dialog -->
+</div>
+
+<div id="UpdatePrice" class="modal fade" tabindex="-1" aria-labelledby="myModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title mt-0" id="myModalLabel">تحديث السعر</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <form asp-controller="Product" asp-action="updatePrice" id="updatePriceH">
+                <input id="product_Id_updateHistory" type="hidden" name="Id" />
+                <div class="modal-body">
+                    <div class="row mb-3">
+                        <div class="col-lg-12">
+                            <div class="row">
+
+                                <h3>اخر الأسعار</h3>
+                                <div class="table-responsive">
+
+                                    <table id="updatePricesTable" class="table table-bordered dt-responsive nowrap w-100">
+                                        <thead class="darkheadtable">
+                                            <tr>
+                                                @if (User.IsInRole("Admin"))
+                                                {
+                                                    <th><p class="widthdisplay">سعر الشراء</p></th>
+
+                                                @*<th><p class="widthdisplay"> سعر البيع الجمله</p></th>
+                                                <th><p class="widthdisplay"> سعر البيع النص جمله</p></th>*@
+                                                }
+                                                <th><p class="widthdisplay">سعر البيع</p></th>
+                                            </tr>
+                                        </thead>
+
+                                        <tbody>
+                                        </tbody>
+
+                                    </table>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                            <div class="mb-3">
+                                <label for="verticalnav-firstname-input">سعر الشراء الجديد</label>
+                                <input type="number" name="PurchasingPrice" class="form-control updatePrice_field" id="" min="0" required>
+                            </div>
+                        </div>
+
+                        @*<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                            <div class="mb-3">
+                                <label for="verticalnav-firstname-input">سعر الجملة الجديد</label>
+                                <input type="number" name="GomlaPrice" class="form-control updatePrice_field" id="" min="0" required>
+                            </div>
+                        </div>
+
+                        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                            <div class="mb-3">
+                                <label for="verticalnav-firstname-input">سعر نصف الجملة الجديد</label>
+                                <input type="number" name="NosGomlaPrice" class="form-control updatePrice_field" id="" min="0" required>
+                            </div>
+                        </div>*@
+
+                        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                            <div class="mb-3">
+                                <label for="verticalnav-firstname-input">سعر البيع الجديد</label>
+                                <input type="number" name="SellingPrice" class="form-control updatePrice_field" id="" min="0" required>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="modal-footer">
+                    <button type="submit" class="btn btn-success waves-effect waves-light">  <i class="bx bx-revision font-size-16 align-middle ml-1"></i> تحديث</button>
+                    <button type="button" class="btn btn-danger waves-effect" data-bs-dismiss="modal">
+                        <i class="bx bx-x font-size-16 align-middle ml-1"></i> اغلاق
+                    </button>
+
+                </div>
+            </form>
+        </div><!-- /.modal-content -->
+    </div><!-- /.modal-dialog -->
+</div>
+
+<div id="Deletmodal" class="modal fade" tabindex="-1" aria-labelledby="myModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+
+            <form asp-controller="Product" asp-action="Delete" method="post" id="deleteProductH">
+                <div class="modal-header">
+                    <h5 class="modal-title mt-0" id="myModalLabel">هل تريد حذف هذا المنتج</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+
+                <div class="modal-footer">
+                    <input type="hidden" id="deleteProductOnModal" name="id" />
+                    <button type="submit" class="btn btn-danger waves-effect waves-light">  <i class="bx bx-trash font-size-16 align-middle ml-1"></i> حذف</button>
+                    <button type="button" class="btn btn-info waves-effect" data-bs-dismiss="modal">
+                        <i class="bx bx-x font-size-16 align-middle ml-1"></i> تراجع
+                    </button>
+                </div>
+            </form>
+
+        </div><!-- /.modal-content -->
+    </div><!-- /.modal-dialog -->
+</div>
+
+
+<div id="Deletmodal_PriceHistory" class="modal fade" tabindex="-1" aria-labelledby="myModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+
+            <form asp-controller="Product" asp-action="DeletePrice" method="post">
+                <div class="modal-header">
+                    <h5 class="modal-title mt-0" id="myModalLabel">هل تريد حذف هذا السعر</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+
+                <div class="modal-footer">
+                    <input type="hidden" id="deletePriceOnModal" name="id" />
+                    <button type="submit" class="btn btn-danger waves-effect waves-light">  <i class="bx bx-trash font-size-16 align-middle ml-1"></i> حذف</button>
+                    <button type="button" class="btn btn-info waves-effect" data-bs-dismiss="modal">
+                        <i class="bx bx-x font-size-16 align-middle ml-1"></i> تراجع
+                    </button>
+                </div>
+            </form>
+
+        </div> /.modal-content
+    </div> /.modal-dialog
+</div>
+
+
+
+@section Scripts{
+    <script>
+
+        function onClickHandler() {
+            $("#productGomlaPrice_AddModal").toggle();
+            $("#productNosGomlaPrice_AddModal").toggle();
+            $("#b1").toggle();
+            $("#b2").toggle();
+
+
+            //var chk = document.getElementById("box").value;
+            //debugger
+            //if (chk) {
+
+            //}
+
+        }
+        let preloadedEdit = [];
+        let preloadedAdd = [];
+
+        let oldImage = [];
+
+        var inputImage;
+        let preloaded = [
+            { id: 1, src: 'https://picsum.photos/500/500?random=1' },
+            { id: 2, src: 'https://picsum.photos/500/500?random=2' },
+            { id: 3, src: 'https://picsum.photos/500/500?random=3' },
+            { id: 4, src: 'https://picsum.photos/500/500?random=4' },
+            { id: 5, src: 'https://picsum.photos/500/500?random=5' },
+            { id: 6, src: 'https://picsum.photos/500/500?random=6' },
+        ];
+
+
+        //$("input[type='file']").on('change', function (e) {
+        //    debugger
+        //    var files = e.target.files;
+        //    $('input[name=photos]').get(0).files = files;
+
+        //});
+
+        $(document).ready(function () {
+
+
+            $("#productGomlaPrice_AddModal").hide();
+            $("#productNosGomlaPrice_AddModal").hide();
+            $("#b1").hide();
+            $("#b2").hide();
+
+
+        });
+
+
+        $('.input-images-2').imageUploader({
+            preloaded: preloadedAdd,
+            imagesInputName: 'productImages',
+            label: 'صور المنتج',
+            preloadedInputName: 'old',
+
+        });
+
+
+        $("#addproductimage input[type='file']").on('change', function (e) {
+            debugger
+            //var xPhoto = $(this).get(0).files;
+            //console.log(preloadedAdd);
+            //var images3 = $('.uploaded-image').children('img').map(function () {
+            //    return $(this).attr('src')
+            //}).get();
+
+            var files = e.target.files;
+            $('input[name=photos]').get(0).files = files;
+
+        });
+
+        //Submit Form in Edit Product
+        $("#editproductimage").on("submit", function (e) {
+          //  e.preventDefault();
+            oldImage = [];
+            debugger
+            $("#oldImage").empty();
+
+            var images3 = $('.uploaded-image').children('img').map(function () {
+                return $(this).attr('src')
+            }).get();
+
+
+            if (images3.length > 0) {
+                debugger
+                for (var i = 0; i < images3.length; i++) {
+                    debugger
+                    var img = images3[i];
+                    if (images3[i].indexOf("productImages") >= 0) {
+                        debugger
+                        var keyword = img.split("/productImages/")[1];
+                        oldImage.push(keyword);
+                        //$('#oldImage').append($('<option>', {
+                        //    value: keyword,
+                        //    text: keyword
+                        //}));
+
+                        //$("#oldImage").append(new Option(keyword, keyword));
+
+                    }
+                }
+            }
+
+            $("#oldImageString").val(oldImage);
+            var files = $("input[name='editphotos[]']").get(0).files;
+
+            $('input[name=productImages]').get(0).files = files;
+        });
+
+        $(document).ready(function () {
+            ///Delete
+            $(".deleteProduct").click(function () {
+                //alert($(this).attr("data-id"));
+                $("#deleteProductOnModal").val($(this).attr("data-id"));
+            })
+            ///Update
+
+            $(".updatePrice_btn").click(function () {
+                debugger
+                let id = $(this).attr("data-id");
+                $("#product_Id_updateHistory").val("");
+                $("#product_Id_updateHistory").val(id);
+                resetUpdatePriceModal();
+                $.ajax({
+                    type: "GET",
+                    url: `/Product/GetActivePrice/${id}`,
+                    dataType: "json",
+                    contentType: "application/json",
+                    success: function (response) {
+                        $("#updatePricesTable tbody").append(`<tr>
+                                                                                                    <td><p class="widthdisplay"> ${response.purchasingPrice} </p></td>
+                                                                                                   
+                                                                                                    <td><p class="widthdisplay"> ${response.sellingPrice} </p></td>
+                                                                                                </tr>`);
+                        $("#UpdatePrice").modal("show");
+                    },
+                    error: function (error) { console.log(error); }
+
+                })
+            });
+
+            $(".historyPrice_btn").click(function () {
+
+                let id = $(this).data("id");
+                resetPriceHistoryModal();
+
+                //let id = $(this).attr("data-id");
+                $.ajax({
+                    type: "GET",
+                    url: `/Product/GetProductForPriceHistory/${id}`,
+                    dataType: "json",
+                    contentType: "application/json",
+                    success: function (response) {
+                            
+                        $("#lbl_Code").html(response.code);
+                        $("#lbl_Company").html(response.companyName);
+                        $("#lbl_Category").html(response.categoryName);
+                        $("#lbl_Name").html(response.name);
+
+                   
+
+                        if (!response.isTrue) {
+                            $.each(response.prices, function (index, element) {
+
+                                let oldDate = new Date(element.createdDate);
+
+                                var d = oldDate.getDate();
+                                var m = oldDate.getMonth();
+                                var y = oldDate.getFullYear();
+
+                                let date = `${y}-${m}-${d}`;
+
+                                $("#PriceHistory_Table tbody").append
+                                    (
+                                        `<tr>
+                                                                            <td><p class="widthdisplay"> ${element.sellingPrice} </p></td>
+                                                                            <td><p class="widthdisplay"> ${date} </p></td>
+                                                                         
+                                                                        </tr>`
+                                    );
+                            });
+                        } else {
+                            $.each(response.prices, function (index, element) {
+
+                                let oldDate = new Date(element.createdDate);
+
+                                var d = oldDate.getDate();
+                                var m = oldDate.getMonth();
+                                var y = oldDate.getFullYear();
+
+                                let date = `${y}-${m}-${d}`;
+
+                                $("#PriceHistory_Table tbody").append
+                                    (
+                                        `<tr>
+                                                                            <td><p class="widthdisplay"> ${element.purchasingPrice} </p></td>
+                                                                            <td><p class="widthdisplay"> ${element.gomla} </p></td>
+                                                                            <td><p class="widthdisplay"> ${element.nosGomla} </p></td>
+                                                                            <td><p class="widthdisplay"> ${element.sellingPrice} </p></td>
+                                                                            <td><p class="widthdisplay"> ${date} </p></td>
+                                                                            <td>
+                                                                              <div class="dropdown">
+                                                                                  <button class="btn btn-grey nav-btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                                                                      <i class="bx bx-cog"></i>
+                                                                                  </button>
+                                                                                  <div class="dropdown-menu dropdown-menu-end">
+                                                                                      <a data-id="${element.id}" class="dropdown-item text-danger deletePrice_btn" data-bs-toggle="modal" data-bs-target="#Deletmodal_PriceHistory" href="#"><i class="bx bx-trash font-size-16 align-middle ml-1"></i>حذف</a>
+                                                                                  </div>
+                                                                              </div>
+                                                                            </td>
+                                                                        </tr>`
+                                    );
+                            });
+                        }
+                        $("#HisstoryPrice").modal("show");
+                    },
+                    error: function (error) { console.log(error); }
+                })
+            });
+
+            $("body").on("click", ".deletePrice_btn", function () {
+                $("#deletePriceOnModal").val($(this).attr("data-id"));
+            })
+        })
+        function resetUpdateModal() {
+            $("#id_EditModal").val("");
+            $("#companies_EditModal").val("0");
+            $("#categories_EditModal").val("0");
+            $("#productName_EditModal").val("");
+            $("#productPurchasingPrice_EditModal").val("");
+            $("#productGomlaPrice_EditModal").val("");
+            $("#productNosGomlaPrice_EditModal").val("");
+            $("#productSellingPrice_EditModal").val("");
+            $("#productDescriptions_EditModal").val("");
+        }
+        function bindData(response) {
+            //  debugger
+            //console.log(response);
+            $("#id_EditModal").val(response.id);
+            $("#companies_EditModal").val(response.companyId).trigger("change");
+            $("#categories_EditModal").val(response.categoryId).trigger("change");
+            $("#productName_EditModal").val(response.name);
+            $("#productPurchasingPrice_EditModal").val(response.purchasingPrice);
+            //$("#productGomlaPrice_EditModal").val(response.gomla);
+            //$("#productNosGomlaPrice_EditModal").val(response.nosGomla);
+            $("#productSellingPrice_EditModal").val(response.sellingPrice);
+            $("#productDescriptions_EditModal").val(response.descriptions);
+
+
+            restImage(response.productImages);
+        }
+
+        function resetUpdatePriceModal() {
+            $("#updatePricesTable tbody tr").remove();
+
+            $(".updatePrice_field").each(function (index, element) {
+                $(element).val("");
+            })
+            $("#companies_EditModal").val("").trigger("change");
+            $("#categories_EditModal").val("").trigger("change");
+
+            //tbody
+        }
+        function resetPriceHistoryModal() {
+            $("#PriceHistory_Table tbody tr").remove();
+
+            $(".priceHistory_Labels").each(function (index, element) {
+                $(element).html("");
+            })
+            //tbody
+        }
+        $(".updateProduct").click(function () {
+            //debugger
+           $("div .input-images-edit-2").empty();
+            resetUpdateModal();
+            let id = $(this).attr("data-id");
+            $("#id_EditModal").val(id);
+
+            $.ajax({
+                type: "GET",
+                url: `/Product/GetProduct/${id}`,
+                dataType: "json",
+                contentType: "application/json",
+                success: function (response) {
+                    // debugger
+                    console.log(response);
+                    bindData(response);
+                    $("#editeEail").modal("show");
+                },
+                error: function (error) { console.log(error); }
+
+            })
+
+
+
+            //alert($("#id_EditModal").val());
+            //Swal.fire({
+            //    allowOutsideClick: false,
+            //    title: 'عملية ناجحة',
+            //    text: `تم بنجاح`,
+            //    icon: 'success',
+            //    confirmButtonText: 'تم'
+            //});
+        })
+
+        function restImage(images) {
+            //  debugger
+            preloadedEdit = [];
+            if (images.length > 0) {
+                for (var i = 0; i < images.length; i++) {
+                    //    debugger
+                    var objImage = {
+                        id: images[i].id,
+                        src: '/productImages/' + images[i].imagePath
+                    };
+                    preloadedEdit.push(objImage);
+                }
+
+            }
+
+               $('.input-images-edit-2').imageUploader({
+                 preloaded: preloadedEdit,
+                 imagesInputName: 'editphotos'
+             });
+        }
+
+
+
+    </script>
+
+}

@@ -1,0 +1,41 @@
+﻿<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+    <div class="mb-3">
+        <div class="input-field">
+            <label for="productImages">صور المنتج </label>
+            <div class="input-images-edit-2" style="padding-top: .5rem;"></div>
+
+        </div>
+        @*<label for="productImages">صور المنتج </label>*@
+        <input type="file" accept="image/*" multiple class="form-control" id="productImages_EditModal" name="productImages" hidden />
+
+    </div>
+</div>
+
+
+
+
+@section Scripts{
+
+<script>
+    $(document).ready(function () {
+        
+        $(".input-images-edit-2 input[name='editphotos']").on('change', function (e) {
+            debugger
+            var files = e.target.files;
+            $('input[name=photos]').get(0).files = files;
+
+        });
+        $(".input-images-edit-2 input[type='file']").on('change', function (e) {
+            debugger
+            var files = e.target.files;
+            $('input[name=photos]').get(0).files = files;
+
+        });
+
+    });
+</script>
+
+}
+
+
+

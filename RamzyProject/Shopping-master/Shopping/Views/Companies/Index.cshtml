@@ -1,0 +1,345 @@
+﻿@model ICollection<A_Service.Models.Company>
+
+
+<div class="page-content">
+    <div class="container-fluid">
+
+        <!-- start page title -->
+        <div class="row">
+            <div class="col-12">
+                <div class="page-title-box d-sm-flex align-items-center justify-content-between">
+
+
+                    <div class="page-title-right">
+                        <ol class="breadcrumb m-0">
+                            <li class="breadcrumb-item  "><h4 class="active">الشركات</h4></li>
+                        </ol>
+
+                        <div class="page-title-right font-size-24 .font-weight-bold" asp-validation-summary="All">
+                        </div>
+
+                    </div>
+
+
+                    <h4 class="mb-sm-0 font-size-18">
+                        <button type="button" class="btn btn-success waves-effect" data-bs-toggle="modal" data-bs-target="#AddCompany"> <i class="bx bx-plus font-size-16 align-middle me-2"></i> اضافة شركه جديد</button>
+                    </h4>
+
+                </div>
+            </div>
+        </div>
+        <!-- end page title -->
+
+
+
+        <div class="row">
+            <div class="col-12">
+                <div class="card">
+                    <div class="card-body">
+
+                        <div class="table-responsive">
+
+                            <table id="datatable-buttons" class="table table-bordered dt-responsive nowrap w-100">
+                                <thead class="darkheadtable">
+                                    <tr>
+                                        <th><p class="widthdisplay">الكود</p></th>
+                                        @*<th><p class="widthdisplay">الكود</p></th>*@
+                                        <th><p class="widthdisplay">اسم الشركه</p></th>
+                                        <th><p class="widthdisplay">وصف الشركه</p></th>
+                                        <th><p class="widthdisplay">Action</p></th>
+                                    </tr>
+                                </thead>
+
+
+                                <tbody>
+
+                                    @foreach (var item in Model)
+                                    {
+                                        <tr>
+                                            <td><p class="widthdisplay">@(Model.ToList().IndexOf(item)+1)</p></td>
+                                            @*<td><p class="widthdisplay">@item.Code</p></td>*@
+                                            <td><p class="widthdisplay">@item.Name</p></td>
+                                            <td><p class="widthdisplay">@item.Description</p></td>
+
+                                            <td>
+                                                <div class="dropdown">
+                                                    <button class="btn btn-grey nav-btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                                        <i class="bx bx-cog"></i>
+                                                    </button>
+                                                    <div class="dropdown-menu dropdown-menu-end">
+
+                                                        <a data-id="@item.Id" class="dropdown-item text-primary updateCompany" @*data-bs-toggle="modal" data-bs-target="#EditeCompany"*@><i class="bx bx-pencil font-size-16 align-middle ml-1 "></i>تعديل</a>
+                                                        <a data-id="@item.Id" class="dropdown-item text-danger deleteCompany" data-bs-toggle="modal" data-bs-target="#Deletmodal"><i class="bx bx-trash font-size-16 align-middle ml-1"></i>حذف</a>
+                                                    </div>
+                                                </div>
+                                            </td>
+                                        </tr>
+                                    }
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div> <!-- end col -->
+        </div> <!-- end row -->
+
+
+
+
+
+    </div> <!-- container-fluid -->
+</div>
+<!-- End Page-content -->
+<!-- Modal -->
+<!--<div class="modal fade transaction-detailModal" tabindex="-1" role="dialog" aria-labelledby="transaction-detailModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="transaction-detailModalLabel">Order Details</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <p class="mb-2">Product id: <span class="text-primary">#SK2540</span></p>
+                <p class="mb-4">Billing Name: <span class="text-primary">Neal Matthews</span></p>
+
+                <div class="table-responsive">
+                    <table class="table align-middle table-nowrap">
+                        <thead>
+                            <tr>
+                                <th scope="col">Product</th>
+                                <th scope="col">Product Name</th>
+                                <th scope="col">Price</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <th scope="row">
+                                    <div>
+                                        <img src="assets/images/product/img-7.png" alt="" class="avatar-sm">
+                                    </div>
+                                </th>
+                                <td>
+                                    <div>
+                                        <h5 class="text-truncate font-size-14">Wireless Headphone (Black)</h5>
+                                        <p class="text-muted mb-0">$ 225 x 1</p>
+                                    </div>
+                                </td>
+                                <td>$ 255</td>
+                            </tr>
+                            <tr>
+                                <th scope="row">
+                                    <div>
+                                        <img src="assets/images/product/img-4.png" alt="" class="avatar-sm">
+                                    </div>
+                                </th>
+                                <td>
+                                    <div>
+                                        <h5 class="text-truncate font-size-14">Phone patterned cases</h5>
+                                        <p class="text-muted mb-0">$ 145 x 1</p>
+                                    </div>
+                                </td>
+                                <td>$ 145</td>
+                            </tr>
+                            <tr>
+                                <td colspan="2">
+                                    <h6 class="m-0 text-right">Sub Total:</h6>
+                                </td>
+                                <td>
+                                    $ 400
+                                </td>
+                            </tr>
+                            <tr>
+                                <td colspan="2">
+                                    <h6 class="m-0 text-right">Shipping:</h6>
+                                </td>
+                                <td>
+                                    Free
+                                </td>
+                            </tr>
+                            <tr>
+                                <td colspan="2">
+                                    <h6 class="m-0 text-right">Total:</h6>
+                                </td>
+                                <td>
+                                    $ 400
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+            </div>
+        </div>
+    </div>
+</div>-->
+<!-- end modal -->
+
+
+<div id="AddCompany" class="modal fade bs-example-modal-lg" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="myLargeModalLabel">اضافة شركه</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <form asp-controller="Companies" asp-action="Add" method="post" id="addCompanyF">
+                <div class="modal-body">
+                    <div class="row">
+                        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                            <div class="mb-3">
+                                <label for="verticalnav-firstname-input">اسم الشركه</label>
+                                <input type="text" name="Name" class="form-control" id="" required>
+                            </div>
+                        </div>
+                        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                            <div class="mb-3">
+                                <label for="verticalnav-firstname-input">وصف الشركه </label>
+                                <textarea type="text" name="Description" class="TextArea" id=""></textarea>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="submit" class="btn btn-success waves-effect waves-light">  <i class="bx bx-check font-size-16 align-middle ml-1"></i> اضافه</button>
+                    <button type="button" class="btn btn-danger waves-effect" data-bs-dismiss="modal">
+                        <i class="bx bx-x font-size-16 align-middle ml-1"></i> اغلاق
+                    </button>
+
+                </div>
+            </form>
+        </div><!-- /.modal-content -->
+    </div><!-- /.modal-dialog -->
+</div>
+
+
+<div id="EditeCompany" class="modal fade" tabindex="-1" aria-labelledby="myModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title mt-0" id="myModalLabel">تعديل الشركه</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <form asp-controller="Companies" asp-action="Update" method="post" id="updateCompanyF">
+                <div class="modal-body">
+                    <input type="hidden" name="Id" id="Id_EditModal" />
+                    <div class="row">
+                        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                            <div class="mb-3">
+                                <label for="verticalnav-firstname-input">اسم الشركه</label>
+                                <input type="Text" name="Name" class="form-control" id="Name_EditModal" required>
+                            </div>
+                        </div>
+
+                        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                            <div class="mb-3">
+                                <label for="verticalnav-firstname-input">وصف الشركه </label>
+                                <textarea type="text" name="Description" class="TextArea" id="Descriptions_EditModal"></textarea>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+
+                <div class="modal-footer">
+                    <button type="submit" class="btn btn-success waves-effect waves-light">  <i class="bx bx-revision font-size-16 align-middle ml-1"></i> تحديث</button>
+                    <button type="button" class="btn btn-danger waves-effect" data-bs-dismiss="modal">
+                        <i class="bx bx-x font-size-16 align-middle ml-1"></i> اغلاق
+                    </button>
+
+                </div>
+            </form>
+        </div><!-- /.modal-content -->
+    </div><!-- /.modal-dialog -->
+</div>
+
+
+<div id="Deletmodal" class="modal fade" tabindex="-1" aria-labelledby="myModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <form asp-controller="Companies" asp-action="Delete" method="post" id="#deleteCompanyF">
+            <input type="hidden" name="Id" id="deleteCompanyOnModal" />
+
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title mt-0" id="myModalLabel">هل تريد حذف هذا المنتج</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+
+                <div class="modal-footer">
+                    <button type="submit" class="btn btn-danger waves-effect waves-light">  <i class="bx bx-trash font-size-16 align-middle ml-1"></i> حذف</button>
+                    <button type="button" class="btn btn-info waves-effect" data-bs-dismiss="modal">
+                        <i class="bx bx-x font-size-16 align-middle ml-1"></i> تراجع
+                    </button>
+
+                </div>
+            </div><!-- /.modal-content -->
+        </form>
+    </div><!-- /.modal-dialog -->
+</div>
+
+
+@section Scripts{
+
+    <script>
+        $(document).ready(function () {
+            ///Update
+            $(".updateCompany").click(function () {
+                resetUpdateModal();
+                let id = $(this).attr("data-id");
+                $("#Id_EditModal").val(id);
+
+                $.ajax({
+                    type: "GET",
+                    url: `/Companies/GetById/${id}`,
+                    dataType: "json",
+                    contentType: "application/json",
+                    success: function (response) {
+                        console.log(response);
+                        bindData(response);
+                        $("#EditeCompany").modal("show");
+                    },
+                    error: function (error) { console.log(error); }
+
+                })
+
+
+
+                //alert($("#id_EditModal").val());
+                //Swal.fire({
+                //    allowOutsideClick: false,
+                //    title: 'عملية ناجحة',
+                //    text: `تم بنجاح`,
+                //    icon: 'success',
+                //    confirmButtonText: 'تم'
+                //});
+            })
+
+            ///Delete
+            $(".deleteCompany").click(function () {
+                //alert($(this).attr("data-id"));
+                $("#deleteCompanyOnModal").val($(this).attr("data-id"));
+            })
+
+
+            function resetUpdateModal() {
+                $("#id_EditModal").val("");
+                $("#Name_EditModal").val("");
+                $("#Descriptions_EditModal").val("");
+            }
+
+
+            function bindData(response) {
+                //console.log(response);
+                $("#id_EditModal").val(response.id);
+                $("#Name_EditModal").val(response.name);
+                $("#Descriptions_EditModal").val(response.descriptions);
+
+            }
+
+
+        })
+
+    </script>
+
+}

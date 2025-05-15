@@ -1,0 +1,278 @@
+﻿@model ICollection<A_Service.Models.Category>
+
+
+<div class="page-content">
+    <div class="container-fluid">
+
+        <!-- start page title -->
+        <div class="row">
+            <div class="col-12">
+                <div class="page-title-box d-sm-flex align-items-center justify-content-between">
+
+                    <div class="page-title-right">
+                        <ol class="breadcrumb m-0">
+                            <li class="breadcrumb-item  "><h4 class="active">الفئات</h4></li>
+                        </ol>
+
+                        <div class="page-title-right font-size-24 .font-weight-bold" asp-validation-summary="All">
+                        </div>
+                    </div>
+                    
+                  
+
+                    <h4 class="mb-sm-0 font-size-18">
+                        <button type="button" class="btn btn-success waves-effect" data-bs-toggle="modal" data-bs-target="#AddCategory"> <i class="bx bx-plus font-size-16 align-middle me-2"></i> اضافة فئه جديد</button>
+                    </h4>
+
+                </div>
+            </div>
+        </div>
+        <!-- end page title -->
+
+
+
+        <div class="row">
+            <div class="col-12">
+                <div class="card">
+                    <div class="card-body">
+
+                        <div class="table-responsive">
+
+                            <table id="datatable-buttons" class="table table-bordered dt-responsive nowrap w-100">
+                                <thead class="darkheadtable">
+                                    <tr>
+                                        <th><p class="widthdisplay">الكود</p></th>
+                                        @*<th><p class="widthdisplay">كود الفئه</p></th>*@
+                                        <th><p class="widthdisplay">اسم الشركة</p></th>
+                                        <th><p class="widthdisplay">اسم الفئه</p></th>
+                                        <th><p class="widthdisplay">وصف الفئه</p></th>
+                                        <th><p class="widthdisplay">Action</p></th>
+                                    </tr>
+                                </thead>
+
+
+                                <tbody>
+
+                                    @foreach (var item in Model)
+                                    {
+                                        <tr>
+                                            <td><p class="widthdisplay">@(Model.ToList().IndexOf(item)+1)</p></td>
+                                            @*<td><p class="widthdisplay">@item.Code</p></td>*@
+                                            <td><p class="widthdisplay">@item.Company.Name</p></td>
+                                            <td><p class="widthdisplay">@item.Name</p></td>
+                                            <td><p class="widthdisplay">@item.Description</p></td>
+
+                                            <td>
+                                                <div class="dropdown">
+                                                    <button class="btn btn-grey nav-btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                                        <i class="bx bx-cog"></i>
+                                                    </button>
+                                                    <div class="dropdown-menu dropdown-menu-end">
+
+                                                        <a data-id="@item.Id" class="dropdown-item text-primary updateCategory" @*data-bs-toggle="modal" data-bs-target="#EditeCategory" href="#"*@><i class="bx bx-pencil font-size-16 align-middle ml-1 "></i>تعديل</a>
+                                                        <a data-id="@item.Id" class="dropdown-item text-danger deleteCategory" data-bs-toggle="modal" data-bs-target="#Deletmodal" href="#"><i class="bx bx-trash font-size-16 align-middle ml-1"></i>حذف</a>
+                                                    </div>
+                                                </div>
+                                            </td>
+
+                                        </tr>
+                                    }
+
+
+
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div> <!-- end col -->
+        </div> <!-- end row -->
+
+
+
+
+
+    </div> <!-- container-fluid -->
+</div>
+<!-- End Page-content -->
+
+<div id="AddCategory" class="modal fade bs-example-modal-lg" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="myLargeModalLabel">اضافة فئه</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <form asp-controller="Categories" asp-action="Add" id="addCategoryF">
+                <div class="modal-body">
+
+                    <div class="row">
+
+                        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                            <div class="mb-3">
+                                <label for="verticalnav-firstname-input">اسم الفئه</label>
+                                <input type="text" class="form-control" name="Name" id="" required>
+                            </div>
+                        </div>
+                        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                            <div class="mb-3">
+                                <label class="form-label">الشركه</label>
+                                <select name="CompanyId" asp-items="ViewBag.Companies" class="form-control select2" required>
+                                    <option value="">اختر شركة</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                            <div class="mb-3">
+                                <label for="verticalnav-firstname-input">وصف الفئه</label>
+                                <textarea type="text" class="TextArea" name="Description" id="" ></textarea>
+                            </div>
+                        </div>
+                    </div>
+
+
+                </div>
+                <div class="modal-footer">
+                    <button type="submit" class="btn btn-success waves-effect waves-light">  <i class="bx bx-check font-size-16 align-middle ml-1"></i> اضافه</button>
+                    <button type="button" class="btn btn-danger waves-effect" data-bs-dismiss="modal">
+                        <i class="bx bx-x font-size-16 align-middle ml-1"></i> اغلاق
+                    </button>
+
+                </div>
+            </form>
+        </div><!-- /.modal-content -->
+    </div><!-- /.modal-dialog -->
+</div>
+
+<div id="EditeCategory" class="modal fade" tabindex="-1" aria-labelledby="myModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title mt-0" id="myModalLabel">تعديل الفئه</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <form asp-controller="Categories" asp-action="Update" id="updateCategoryF">
+                <div class="modal-body">
+                    <input type="hidden" name="Id" id="id_EditModal" />
+                    <div class="row">
+                        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                            <div class="mb-3">
+                                <label for="verticalnav-firstname-input">اسم الفئه</label>
+                                <input type="text" class="form-control" name="Name" id="Name_EditModal" required>
+                            </div>
+                        </div>
+                        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                            <div class="mb-3">
+                                <label class="form-label">الشركه</label>
+                                <select name="CompanyId" asp-items="ViewBag.Companies" id="Company_EditModal" class="form-control select2" required>
+                                    <option value="">اختر شركة</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                            <div class="mb-3">
+                                <label for="verticalnav-firstname-input">وصف الفئه </label>
+                                <textarea type="text" class="TextArea" name="Description" id="Descriptions_EditModal" ></textarea>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+
+                <div class="modal-footer">
+                    <button type="submit" class="btn btn-success waves-effect waves-light">  <i class="bx bx-revision font-size-16 align-middle ml-1"></i> تحديث</button>
+                    <button type="button" class="btn btn-danger waves-effect" data-bs-dismiss="modal">
+                        <i class="bx bx-x font-size-16 align-middle ml-1"></i> اغلاق
+                    </button>
+
+                </div>
+            </form>
+        </div><!-- /.modal-content -->
+    </div><!-- /.modal-dialog -->
+</div>
+
+<div id="Deletmodal" class="modal fade" tabindex="-1" aria-labelledby="myModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <form asp-controller="Categories" asp-action="Delete" id="DeleteCategoryF">
+            <input type="hidden" name="Id" id="deleteCategoryOnModal" />
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title mt-0" id="myModalLabel">هل تريد حذف هذا المنتج</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+
+                <div class="modal-footer">
+                    <button type="submit" class="btn btn-danger waves-effect waves-light">  <i class="bx bx-trash font-size-16 align-middle ml-1"></i> حذف</button>
+                    <button type="button" class="btn btn-info waves-effect" data-bs-dismiss="modal">
+                        <i class="bx bx-x font-size-16 align-middle ml-1"></i> تراجع
+                    </button>
+                </div>
+            </div><!-- /.modal-content -->
+        </form>
+    </div><!-- /.modal-dialog -->
+</div>
+
+
+@section Scripts{
+    <script>
+        $(document).ready(function () {
+
+            ///Update
+            $(".updateCategory").click(function () {
+                resetUpdateModal();
+                let id = $(this).attr("data-id");
+                $("#Id_EditModal").val(id);
+
+                $.ajax({
+                    type: "GET",
+                    url: `/Categories/GetById/${id}`,
+                    dataType: "json",
+                    contentType: "application/json",
+                    success: function (response) {
+                        console.log(response);
+                        bindData(response);
+                        $("#EditeCategory").modal("show");
+                    },
+                    error: function (error) { console.log(error); }
+
+                })
+
+
+
+                //alert($("#id_EditModal").val());
+                //Swal.fire({
+                //    allowOutsideClick: false,
+                //    title: 'عملية ناجحة',
+                //    text: `تم بنجاح`,
+                //    icon: 'success',
+                //    confirmButtonText: 'تم'
+                //});
+            })
+
+            ///Delete
+            $(".deleteCategory").click(function () {
+                //alert($(this).attr("data-id"));
+                $("#deleteCategoryOnModal").val($(this).attr("data-id"));
+            })
+
+
+            function resetUpdateModal() {
+                $("#id_EditModal").val("");
+                $("#Name_EditModal").val("");                     
+                $("#Company_EditModal").val("").trigger("change");
+                $("#Descriptions_EditModal").val("");
+            }
+
+
+            function bindData(response) {
+                //console.log(response);
+                $("#id_EditModal").val(response.id);
+                $("#Name_EditModal").val(response.name);
+                $("#Company_EditModal").val(response.companyId).trigger("change");
+                $("#Descriptions_EditModal").val(response.descriptions);
+            }
+
+        })
+
+    </script>
+}

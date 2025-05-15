@@ -1,0 +1,142 @@
+﻿
+
+
+<link rel="stylesheet" href="~/dist/image-uploader.min.css">
+
+<h1>qqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqq</h1>
+<form method="POST" asp-controller="Product" asp-action="test" enctype="multipart/form-data">
+
+    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+        <div class="mb-3">
+            <label for="verticalnav-firstname-input">ًور </label>
+            <input type="file" accept="image/*" class="form-control" id="productImages_AddModal" name="productimages" hidden />
+        </div>
+    </div>
+    <span>Image</span>
+    <div class="input-field">
+        <label class="active">Photos</label>
+        @*<input type="file" accept="image/*" class="form-control" id="productImages_AddModal" name="productImages" hidden />*@
+        <div class="input-images-2" style="padding-top: .5rem;"></div>
+    </div>
+    <button type="submit">Submit and display data</button>
+
+</form>
+
+<script type="text/javascript" src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
+<script type="text/javascript" src="~/dist/image-uploader.min.js"></script>
+<script>
+    $(document).ready(function () {
+        // $('.input-images-2').imageUploader();
+
+
+        //  Form_Data.append("ImagesGallery", $("input[type='file'")[0].files[0]);
+
+        //$.ajax({
+        //    url: '/Product/test',
+        //    data: Form_Data,
+        //    contentType: false,
+        //    processData: false,
+        //    type: 'POST',
+        //    success: function (data) {
+        //        //
+        //    }
+        //});
+    });
+    function uploadfiles() {
+        debugger
+        var Form_Data = new FormData();
+        document.getElementsByName("photos[]").forEach((el) => {
+            if ($(el)[0].files[0] != undefined)
+                Form_Data.append('photos', $(el)[0].files[0]);
+        });
+
+
+        Form_Data.append('Description', $("#productDescriptions_AddModal").val());
+
+        $.ajax({
+            url: '/Product/test',
+
+            data: Form_Data,
+            contentType: false,
+            processData: false,
+            type: 'POST',
+            success: function (data) {
+                //
+            }
+        });
+    }
+    //function uploadfiles() {
+    //    var Form_Data = new FormData();
+    //    document.getElementsByName("photos[]").forEach((el) => {
+    //        debugger
+    //        if ($(el)[0].files[0] != undefined)
+    //            Form_Data.append('photos', $(el)[0].files[0]);
+    //    });
+    //        }
+    let preloaded = [
+        { id: 1, src: 'https://picsum.photos/500/500?random=1' },
+        { id: 2, src: 'https://picsum.photos/500/500?random=2' },
+        { id: 3, src: 'https://picsum.photos/500/500?random=3' },
+        { id: 4, src: 'https://picsum.photos/500/500?random=4' },
+        { id: 5, src: 'https://picsum.photos/500/500?random=5' },
+        { id: 6, src: 'https://picsum.photos/500/500?random=6' },
+    ];
+
+    $("form1").on("submit", function (e) {
+        debugger
+         e.preventDefault()
+        var x = $(this).get(0).files;
+        let formData = new FormData()
+
+        //document.getElementsByName("photos[]").forEach((el) => {
+        //    if ($(el)[0].files[0] != undefined)
+        //        formData.append('photos', $(el)[0].files[0]);
+        //});
+
+        
+       
+
+
+        formData.append('Description', $("#productDescriptions_AddModal").val());
+
+        $.ajax({
+            url: '/Product/test',
+            data: formData,
+            contentType: false,
+            processData: false,
+            type: 'POST',
+            success: function (data) {
+                //
+            }
+
+        })
+    });
+
+    $('.input-images-2').imageUploader({
+        //preloaded: preloaded,
+        imagesInputName: 'photos',
+        label: 'Drag & Drop files here or click to browse'
+
+        //    preloadedInputName: 'old'
+    });
+
+    $("input[type='file']").on('change', function (e) {
+       // $('input[name=productimages]').get(0).files = null;
+        debugger
+        var xx = $('input[name=productimages]').get(0).files;
+       var  files = e.target.files;
+        // var result = $("input[type='file']").get(0).files;
+
+        //for (var i = 0; i < files.length; i++) {
+        //     //productimages.append("photosie", $("input[type='file']").get(0).files[i]);
+        //     //formData.append("photoslist", $("input[type='file']").get(0).files[i]);
+        //     //formData.append("photosarr", $("input[type='file']").get(0).files[i]);
+
+        // //   $('#productImages_AddModal').get(0).files = $("input[type='file']").get(0).files[i]
+        //}
+
+       // $('#productImages_AddModal').get(0).files = $("input[type='file']").get(0).files;
+        $('input[name=productimages]').get(0).files = files
+
+    });
+</script>

@@ -1,0 +1,65 @@
+﻿@model ICollection<A_Service.Models.Price>
+
+
+@{int i = 0;}
+
+@foreach (var item in Model)
+{
+    i++;
+   
+        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+            <div class="row">
+                @if (User.IsInRole("Admin"))
+                {
+                    <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
+                        <div class="mb-3">
+                            <label for="verticalnav-firstname-input"><b>سعر الشراء</b> </label>
+                            @*<input type="text" class="form-control priceProd" readonly asp-for="@item.PurchasingPrice">*@
+                            <span>@item.PurchasingPrice</span>
+                        </div>
+                    </div>
+
+
+                    <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
+                        <div class="mb-3">
+                            <label for="verticalnav-firstname-input"><b>سعر البيع الجمله </b></label>
+                            @*<input type="text" class="form-control priceProd" readonly asp-for="@item.GomlaPrice">*@
+                            <span>@item.GomlaPrice</span>
+
+                        </div>
+                    </div>
+                    <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
+                        <div class="mb-3">
+                            <label for="verticalnav-firstname-input"><b>سعر البيع النص جمله</b> </label>
+                            @*<input type="text" class="form-control priceProd" readonly asp-for="@item.NosGomlaPrice">*@
+                            <span>@item.NosGomlaPrice</span>
+
+                        </div>
+                    </div>
+                }
+                @if (Model.Count() > 1 && i == 1)
+                {
+                    <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
+                        <div class="mb-3">
+                            <label for="verticalnav-firstname-input"><b>سعر البيع</b> </label>
+                            @*<input type="text" class="form-control priceProd" readonly asp-for="@item.SellingPrice">*@
+                            <del>@item.SellingPrice</del>
+                        </div>
+                    </div>
+                }
+                else
+                {
+                    <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
+                        <div class="mb-3">
+                            <label for="verticalnav-firstname-input"><b>سعر البيع</b> </label>
+                            @*<input type="text" class="form-control priceProd" readonly asp-for="@item.SellingPrice">*@
+                            <span>@item.SellingPrice</span>
+
+                        </div>
+                    </div>
+                }
+
+            </div>
+        </div>
+    }
+
