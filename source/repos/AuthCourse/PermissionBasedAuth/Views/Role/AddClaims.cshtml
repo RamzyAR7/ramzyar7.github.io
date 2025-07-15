@@ -1,0 +1,53 @@
+﻿@model PermissionBasedAuth.Models.RoleClaimsVM
+
+@{
+    ViewData["Title"] = "تعديل صلاحيات الدور: " + Model.RoleName;
+}
+
+<h2>تعديل صلاحيات الدور: @Model.RoleName</h2>
+
+<form asp-action="AddClaims" asp-route-Id="@Model.Id" method="post">
+    <input type="hidden" asp-for="Id" />
+    <input type="hidden" asp-for="RoleName" />
+
+    <div class="accordion" id="claimsAccordion">
+        @for (int i = 0; i < Model.ParentClaims.Count; i++)
+        {
+            var parent = Model.ParentClaims[i];
+            <div class="card mb-2">
+                <input type="hidden" asp-for="ParentClaims[@i].ParentName" />
+                <div class="card-header" id="heading-@i">
+                    <h5 class="mb-0">
+                        <button class="btn btn-link" type="button" data-toggle="collapse" data-target="#collapse-@i" aria-expanded="true" aria-controls="collapse-@i">
+                            @parent.ParentName
+                        </button>
+                    </h5>
+                </div>
+
+                <div id="collapse-@i" class="collapse show" aria-labelledby="heading-@i" data-parent="#claimsAccordion">
+                    <div class="card-body">
+                        <div class="row">
+                            @for (int j = 0; j < parent.ChildClaims.Count; j++)
+                            {
+                                var child = parent.ChildClaims[j];
+                                <div class="col-md-3">
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="checkbox"
+                                               asp-for="ParentClaims[@i].ChildClaims[@j].IsSelected" />
+                                        <label class="form-check-label" asp-for="ParentClaims[@i].ChildClaims[@j].IsSelected">
+                                            @child.Name
+                                        </label>
+                                        <input type="hidden" asp-for="ParentClaims[@i].ChildClaims[@j].Name" />
+                                    </div>
+                                </div>
+                            }
+                        </div>
+                    </div>
+                </div>
+            </div>
+        }
+    </div>
+
+    <button type="submit" class="btn btn-success mt-3">حفظ الصلاحيات</button>
+    <a asp-action="Index" class="btn btn-secondary mt-3">رجوع</a>
+</form>

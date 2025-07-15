@@ -1,0 +1,262 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "C:\\Users\\Ahmed Ramzy\\source\\repos\\AuthCourse\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{6631AF01-4867-467D-BED1-88F0EE2EC64C}|PermissionBasedAuth\\PermissionBasedAuth.csproj|c:\\users\\ahmed ramzy\\source\\repos\\authcourse\\permissionbasedauth\\filter\\authorizationhelper.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{6631AF01-4867-467D-BED1-88F0EE2EC64C}|PermissionBasedAuth\\PermissionBasedAuth.csproj|solutionrelative:permissionbasedauth\\filter\\authorizationhelper.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{6631AF01-4867-467D-BED1-88F0EE2EC64C}|PermissionBasedAuth\\PermissionBasedAuth.csproj|c:\\users\\ahmed ramzy\\source\\repos\\authcourse\\permissionbasedauth\\filter\\permissionfilter.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{6631AF01-4867-467D-BED1-88F0EE2EC64C}|PermissionBasedAuth\\PermissionBasedAuth.csproj|solutionrelative:permissionbasedauth\\filter\\permissionfilter.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{6631AF01-4867-467D-BED1-88F0EE2EC64C}|PermissionBasedAuth\\PermissionBasedAuth.csproj|c:\\users\\ahmed ramzy\\source\\repos\\authcourse\\permissionbasedauth\\filter\\permissionfilterfactory.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{6631AF01-4867-467D-BED1-88F0EE2EC64C}|PermissionBasedAuth\\PermissionBasedAuth.csproj|solutionrelative:permissionbasedauth\\filter\\permissionfilterfactory.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{6631AF01-4867-467D-BED1-88F0EE2EC64C}|PermissionBasedAuth\\PermissionBasedAuth.csproj|c:\\users\\ahmed ramzy\\source\\repos\\authcourse\\permissionbasedauth\\controllers\\accountcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{6631AF01-4867-467D-BED1-88F0EE2EC64C}|PermissionBasedAuth\\PermissionBasedAuth.csproj|solutionrelative:permissionbasedauth\\controllers\\accountcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{6631AF01-4867-467D-BED1-88F0EE2EC64C}|PermissionBasedAuth\\PermissionBasedAuth.csproj|c:\\users\\ahmed ramzy\\source\\repos\\authcourse\\permissionbasedauth\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{6631AF01-4867-467D-BED1-88F0EE2EC64C}|PermissionBasedAuth\\PermissionBasedAuth.csproj|solutionrelative:permissionbasedauth\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{6631AF01-4867-467D-BED1-88F0EE2EC64C}|PermissionBasedAuth\\PermissionBasedAuth.csproj|c:\\users\\ahmed ramzy\\source\\repos\\authcourse\\permissionbasedauth\\views\\shared\\error.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{6631AF01-4867-467D-BED1-88F0EE2EC64C}|PermissionBasedAuth\\PermissionBasedAuth.csproj|solutionrelative:permissionbasedauth\\views\\shared\\error.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{6631AF01-4867-467D-BED1-88F0EE2EC64C}|PermissionBasedAuth\\PermissionBasedAuth.csproj|c:\\users\\ahmed ramzy\\source\\repos\\authcourse\\permissionbasedauth\\views\\shared\\_layout.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{6631AF01-4867-467D-BED1-88F0EE2EC64C}|PermissionBasedAuth\\PermissionBasedAuth.csproj|solutionrelative:permissionbasedauth\\views\\shared\\_layout.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{6631AF01-4867-467D-BED1-88F0EE2EC64C}|PermissionBasedAuth\\PermissionBasedAuth.csproj|c:\\users\\ahmed ramzy\\source\\repos\\authcourse\\permissionbasedauth\\views\\shared\\_validationscriptspartial.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{6631AF01-4867-467D-BED1-88F0EE2EC64C}|PermissionBasedAuth\\PermissionBasedAuth.csproj|solutionrelative:permissionbasedauth\\views\\shared\\_validationscriptspartial.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{6631AF01-4867-467D-BED1-88F0EE2EC64C}|PermissionBasedAuth\\PermissionBasedAuth.csproj|c:\\users\\ahmed ramzy\\source\\repos\\authcourse\\permissionbasedauth\\views\\_viewimports.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{6631AF01-4867-467D-BED1-88F0EE2EC64C}|PermissionBasedAuth\\PermissionBasedAuth.csproj|solutionrelative:permissionbasedauth\\views\\_viewimports.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{6631AF01-4867-467D-BED1-88F0EE2EC64C}|PermissionBasedAuth\\PermissionBasedAuth.csproj|c:\\users\\ahmed ramzy\\source\\repos\\authcourse\\permissionbasedauth\\views\\_viewstart.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{6631AF01-4867-467D-BED1-88F0EE2EC64C}|PermissionBasedAuth\\PermissionBasedAuth.csproj|solutionrelative:permissionbasedauth\\views\\_viewstart.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{6631AF01-4867-467D-BED1-88F0EE2EC64C}|PermissionBasedAuth\\PermissionBasedAuth.csproj|c:\\users\\ahmed ramzy\\source\\repos\\authcourse\\permissionbasedauth\\controllers\\usercontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{6631AF01-4867-467D-BED1-88F0EE2EC64C}|PermissionBasedAuth\\PermissionBasedAuth.csproj|solutionrelative:permissionbasedauth\\controllers\\usercontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{6631AF01-4867-467D-BED1-88F0EE2EC64C}|PermissionBasedAuth\\PermissionBasedAuth.csproj|c:\\users\\ahmed ramzy\\source\\repos\\authcourse\\permissionbasedauth\\controllers\\rolecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{6631AF01-4867-467D-BED1-88F0EE2EC64C}|PermissionBasedAuth\\PermissionBasedAuth.csproj|solutionrelative:permissionbasedauth\\controllers\\rolecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{6631AF01-4867-467D-BED1-88F0EE2EC64C}|PermissionBasedAuth\\PermissionBasedAuth.csproj|c:\\users\\ahmed ramzy\\source\\repos\\authcourse\\permissionbasedauth\\seeding\\identityseeding.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{6631AF01-4867-467D-BED1-88F0EE2EC64C}|PermissionBasedAuth\\PermissionBasedAuth.csproj|solutionrelative:permissionbasedauth\\seeding\\identityseeding.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 161,
+          "SelectedChildIndex": 12,
+          "Children": [
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{34e76e81-ee4a-11d0-ae2e-00a0c90fffc3}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{d78612c7-9962-4b83-95d9-268046dad23a}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{1c4feeaa-4718-4aa9-859d-94ce25d182ba}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:323948898:0:{81164725-9a96-4ece-a4cb-440d8fd285e5}"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "AccountController.cs",
+              "DocumentMoniker": "C:\\Users\\Ahmed Ramzy\\source\\repos\\AuthCourse\\PermissionBasedAuth\\Controllers\\AccountController.cs",
+              "RelativeDocumentMoniker": "PermissionBasedAuth\\Controllers\\AccountController.cs",
+              "ToolTip": "C:\\Users\\Ahmed Ramzy\\source\\repos\\AuthCourse\\PermissionBasedAuth\\Controllers\\AccountController.cs",
+              "RelativeToolTip": "PermissionBasedAuth\\Controllers\\AccountController.cs",
+              "ViewState": "AgIAADcAAAAAAAAAAAAAACQAAAANAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-07-15T20:39:54.965Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 9,
+              "Title": "_ViewStart.cshtml",
+              "DocumentMoniker": "C:\\Users\\Ahmed Ramzy\\source\\repos\\AuthCourse\\PermissionBasedAuth\\Views\\_ViewStart.cshtml",
+              "RelativeDocumentMoniker": "PermissionBasedAuth\\Views\\_ViewStart.cshtml",
+              "ToolTip": "C:\\Users\\Ahmed Ramzy\\source\\repos\\AuthCourse\\PermissionBasedAuth\\Views\\_ViewStart.cshtml",
+              "RelativeToolTip": "PermissionBasedAuth\\Views\\_ViewStart.cshtml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-07-15T20:37:09.627Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
+              "Title": "_ViewImports.cshtml",
+              "DocumentMoniker": "C:\\Users\\Ahmed Ramzy\\source\\repos\\AuthCourse\\PermissionBasedAuth\\Views\\_ViewImports.cshtml",
+              "RelativeDocumentMoniker": "PermissionBasedAuth\\Views\\_ViewImports.cshtml",
+              "ToolTip": "C:\\Users\\Ahmed Ramzy\\source\\repos\\AuthCourse\\PermissionBasedAuth\\Views\\_ViewImports.cshtml",
+              "RelativeToolTip": "PermissionBasedAuth\\Views\\_ViewImports.cshtml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-07-15T20:37:03.669Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "_Layout.cshtml",
+              "DocumentMoniker": "C:\\Users\\Ahmed Ramzy\\source\\repos\\AuthCourse\\PermissionBasedAuth\\Views\\Shared\\_Layout.cshtml",
+              "RelativeDocumentMoniker": "PermissionBasedAuth\\Views\\Shared\\_Layout.cshtml",
+              "ToolTip": "C:\\Users\\Ahmed Ramzy\\source\\repos\\AuthCourse\\PermissionBasedAuth\\Views\\Shared\\_Layout.cshtml",
+              "RelativeToolTip": "PermissionBasedAuth\\Views\\Shared\\_Layout.cshtml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-07-15T20:37:00.793Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "_ValidationScriptsPartial.cshtml",
+              "DocumentMoniker": "C:\\Users\\Ahmed Ramzy\\source\\repos\\AuthCourse\\PermissionBasedAuth\\Views\\Shared\\_ValidationScriptsPartial.cshtml",
+              "RelativeDocumentMoniker": "PermissionBasedAuth\\Views\\Shared\\_ValidationScriptsPartial.cshtml",
+              "ToolTip": "C:\\Users\\Ahmed Ramzy\\source\\repos\\AuthCourse\\PermissionBasedAuth\\Views\\Shared\\_ValidationScriptsPartial.cshtml",
+              "RelativeToolTip": "PermissionBasedAuth\\Views\\Shared\\_ValidationScriptsPartial.cshtml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-07-15T20:36:59.157Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "PermissionFilterFactory.cs",
+              "DocumentMoniker": "C:\\Users\\Ahmed Ramzy\\source\\repos\\AuthCourse\\PermissionBasedAuth\\Filter\\PermissionFilterFactory.cs",
+              "RelativeDocumentMoniker": "PermissionBasedAuth\\Filter\\PermissionFilterFactory.cs",
+              "ToolTip": "C:\\Users\\Ahmed Ramzy\\source\\repos\\AuthCourse\\PermissionBasedAuth\\Filter\\PermissionFilterFactory.cs",
+              "RelativeToolTip": "PermissionBasedAuth\\Filter\\PermissionFilterFactory.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA0AAAAIAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-07-15T18:16:02.207Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "PermissionFilter.cs",
+              "DocumentMoniker": "C:\\Users\\Ahmed Ramzy\\source\\repos\\AuthCourse\\PermissionBasedAuth\\Filter\\PermissionFilter.cs",
+              "RelativeDocumentMoniker": "PermissionBasedAuth\\Filter\\PermissionFilter.cs",
+              "ToolTip": "C:\\Users\\Ahmed Ramzy\\source\\repos\\AuthCourse\\PermissionBasedAuth\\Filter\\PermissionFilter.cs",
+              "RelativeToolTip": "PermissionBasedAuth\\Filter\\PermissionFilter.cs",
+              "ViewState": "AgIAAAgAAAAAAAAAAAAxwCYAAAAyAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-07-15T18:22:11.676Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "Program.cs",
+              "DocumentMoniker": "C:\\Users\\Ahmed Ramzy\\source\\repos\\AuthCourse\\PermissionBasedAuth\\Program.cs",
+              "RelativeDocumentMoniker": "PermissionBasedAuth\\Program.cs",
+              "ToolTip": "C:\\Users\\Ahmed Ramzy\\source\\repos\\AuthCourse\\PermissionBasedAuth\\Program.cs",
+              "RelativeToolTip": "PermissionBasedAuth\\Program.cs",
+              "ViewState": "AgIAAAMAAAAAAAAAAAAAAEgAAAAMAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-07-15T20:09:28.882Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "AuthorizationHelper.cs",
+              "DocumentMoniker": "C:\\Users\\Ahmed Ramzy\\source\\repos\\AuthCourse\\PermissionBasedAuth\\Filter\\AuthorizationHelper.cs",
+              "RelativeDocumentMoniker": "PermissionBasedAuth\\Filter\\AuthorizationHelper.cs",
+              "ToolTip": "C:\\Users\\Ahmed Ramzy\\source\\repos\\AuthCourse\\PermissionBasedAuth\\Filter\\AuthorizationHelper.cs",
+              "RelativeToolTip": "PermissionBasedAuth\\Filter\\AuthorizationHelper.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABEAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-07-15T18:23:27.65Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "Error.cshtml",
+              "DocumentMoniker": "C:\\Users\\Ahmed Ramzy\\source\\repos\\AuthCourse\\PermissionBasedAuth\\Views\\Shared\\Error.cshtml",
+              "RelativeDocumentMoniker": "PermissionBasedAuth\\Views\\Shared\\Error.cshtml",
+              "ToolTip": "C:\\Users\\Ahmed Ramzy\\source\\repos\\AuthCourse\\PermissionBasedAuth\\Views\\Shared\\Error.cshtml",
+              "RelativeToolTip": "PermissionBasedAuth\\Views\\Shared\\Error.cshtml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-07-15T20:36:55.362Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 12,
+              "Title": "IdentitySeeding.cs",
+              "DocumentMoniker": "C:\\Users\\Ahmed Ramzy\\source\\repos\\AuthCourse\\PermissionBasedAuth\\Seeding\\IdentitySeeding.cs",
+              "RelativeDocumentMoniker": "PermissionBasedAuth\\Seeding\\IdentitySeeding.cs",
+              "ToolTip": "C:\\Users\\Ahmed Ramzy\\source\\repos\\AuthCourse\\PermissionBasedAuth\\Seeding\\IdentitySeeding.cs",
+              "RelativeToolTip": "PermissionBasedAuth\\Seeding\\IdentitySeeding.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAACMAAAA8AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-07-15T20:21:48.841Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 11,
+              "Title": "RoleController.cs",
+              "DocumentMoniker": "C:\\Users\\Ahmed Ramzy\\source\\repos\\AuthCourse\\PermissionBasedAuth\\Controllers\\RoleController.cs",
+              "RelativeDocumentMoniker": "PermissionBasedAuth\\Controllers\\RoleController.cs",
+              "ToolTip": "C:\\Users\\Ahmed Ramzy\\source\\repos\\AuthCourse\\PermissionBasedAuth\\Controllers\\RoleController.cs",
+              "RelativeToolTip": "PermissionBasedAuth\\Controllers\\RoleController.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAG4AAAA3AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-07-15T20:08:28.119Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 10,
+              "Title": "UserController.cs",
+              "DocumentMoniker": "C:\\Users\\Ahmed Ramzy\\source\\repos\\AuthCourse\\PermissionBasedAuth\\Controllers\\UserController.cs",
+              "RelativeDocumentMoniker": "PermissionBasedAuth\\Controllers\\UserController.cs",
+              "ToolTip": "C:\\Users\\Ahmed Ramzy\\source\\repos\\AuthCourse\\PermissionBasedAuth\\Controllers\\UserController.cs",
+              "RelativeToolTip": "PermissionBasedAuth\\Controllers\\UserController.cs",
+              "ViewState": "AgIAAAYAAAAAAAAAAAAAACQAAAAIAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-07-15T20:08:46.274Z"
+            }
+          ]
+        },
+        {
+          "DockedWidth": 331,
+          "SelectedChildIndex": -1,
+          "Children": [
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{40ea2e6b-2121-4bb8-a43e-c83c04b51041}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{3ae79031-e1bc-11d0-8f78-00a0c9110057}"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

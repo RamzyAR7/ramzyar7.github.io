@@ -1,0 +1,11 @@
+﻿@model UserIdentity.Entities.ApplicationUser
+
+<h2>Assign Role to @Model.UserName</h2>
+
+<form asp-action="AddRole" method="post">
+    <div class="form-group">
+        <label for="roleName">Select Role</label>
+        <select name="roleName" asp-items="ViewBag.Roles" class="form-control"></select>
+    </div>
+    <button type="submit" class="btn btn-success">Assign Role</button>
+</form>

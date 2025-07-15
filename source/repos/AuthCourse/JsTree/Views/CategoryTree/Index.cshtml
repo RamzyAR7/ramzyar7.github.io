@@ -1,0 +1,59 @@
+﻿<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jstree/3.3.12/themes/default/style.min.css" />
+
+<div id="jstree"></div>
+
+<form asp-controller="CategoryTree" asp-action="Index" method="post">
+    <input type="hidden" name="SelectedItems" id="selectedItems" />
+    <button type="submit">Submit</button>
+</form>
+
+@section Scripts {
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jstree/3.3.12/jstree.min.js"></script>
+    <script type="text/javascript">
+        $(document).ready(function () {
+             $("#jstree").jstree({
+                'core': {
+                    'themes': {
+                        'name': 'proton',
+                        'responsive': true
+                    },
+                     "data": @Html.Raw(ViewBag.JsonTreeData)
+                },
+                "checkbox": {
+                    "keep_selected_style": false
+                },
+                "plugins": ["checkbox"]
+            });
+
+
+            $("#jstree").on('changed.jstree', function (e, data) {
+                debugger;
+                var i, j;
+                var selectedItems = [];
+                for (i = 0, j = data.selected.length; i < j; i++) {
+                    //Fetch the Id.
+                    var id = data.selected[i];
+
+                    //Remove the ParentId.
+                    if (id.indexOf('-') != -1) {
+                        id = id.split("-")[1];
+                    }
+
+                    //Add the Node to the JSON Array.
+                    selectedItems.push({
+                        text: data.instance.get_node(data.selected[i]).text,
+                        id: id,
+                        parent: data.instance.get_node(data.selected[i]).parent  // Modified to use data.instance to retrieve the parent node
+                    });
+                }
+
+                //Serialize the JSON Array and save in HiddenField.
+                $('#selectedItems').val(JSON.stringify(selectedItems));
+            });
+
+
+
+        });
+    </script>
+}
