@@ -1,6 +1,7 @@
 ﻿using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
+using PermissionAuth.ActionFilters;
 using PermissionAuth.Context;
 using PermissionAuth.Dtos;
 using PermissionAuth.Models;
@@ -10,6 +11,7 @@ namespace PermissionAuth.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
+    [ApiExplorerSettings(GroupName ="User")]
     public class UserController(ApplicationDbContext _dbContext) : ControllerBase
     {
         [HttpGet]

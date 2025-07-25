@@ -1,4 +1,5 @@
 ﻿using Microsoft.AspNetCore.Authentication;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Filters;
 using PermissionAuth.Dtos;
@@ -41,6 +42,7 @@ namespace PermissionAuth.Service
         public IFilterMetadata CreateInstance(IServiceProvider serviceProvider)
         {
             var authService = serviceProvider.GetRequiredService<Authorization>();
+            // inject becouse we use IAsyncAuthorizationFilter do not go use DI in the constructor of PermissionFilter
             return new PermissionFilter(_permission, authService);
         }
     }

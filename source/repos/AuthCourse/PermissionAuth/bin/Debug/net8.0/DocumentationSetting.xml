@@ -1,0 +1,53 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>PermissionAuth</name>
+    </assembly>
+    <members>
+        <member name="M:PermissionAuth.Controllers.AccountController.Login(PermissionAuth.Dtos.LoginDto)">
+            <summary>
+            This Endpoint is for Login
+            </summary>
+            <param name="login"> LoginDto </param>
+            <returns>Generate Jwt Bearer Token</returns>
+        </member>
+        <member name="M:PermissionAuth.Controllers.ProductsController.CreateProduct(PermissionAuth.Models.Product)">
+            <summary>
+            This EndPoint For Create NEW Product
+            </summary>
+            <param name="product"> product Dto</param>
+            <returns>Product Id</returns>
+        </member>
+        <member name="M:PermissionAuth.Controllers.ProductsController.GetProduct(System.Int32)">
+            <summary>
+            This Endpoint for Get Product by Product Id
+            </summary>
+            <param name="id"> Product Id</param>
+            <returns> Product obj</returns>
+        </member>
+        <member name="T:PermissionAuth.Migrations.init">
+            <inheritdoc />
+        </member>
+        <member name="M:PermissionAuth.Migrations.init.Up(Microsoft.EntityFrameworkCore.Migrations.MigrationBuilder)">
+            <inheritdoc />
+        </member>
+        <member name="M:PermissionAuth.Migrations.init.Down(Microsoft.EntityFrameworkCore.Migrations.MigrationBuilder)">
+            <inheritdoc />
+        </member>
+        <member name="M:PermissionAuth.Migrations.init.BuildTargetModel(Microsoft.EntityFrameworkCore.ModelBuilder)">
+            <inheritdoc />
+        </member>
+        <member name="T:PermissionAuth.Migrations.init1">
+            <inheritdoc />
+        </member>
+        <member name="M:PermissionAuth.Migrations.init1.Up(Microsoft.EntityFrameworkCore.Migrations.MigrationBuilder)">
+            <inheritdoc />
+        </member>
+        <member name="M:PermissionAuth.Migrations.init1.Down(Microsoft.EntityFrameworkCore.Migrations.MigrationBuilder)">
+            <inheritdoc />
+        </member>
+        <member name="M:PermissionAuth.Migrations.init1.BuildTargetModel(Microsoft.EntityFrameworkCore.ModelBuilder)">
+            <inheritdoc />
+        </member>
+    </members>
+</doc>

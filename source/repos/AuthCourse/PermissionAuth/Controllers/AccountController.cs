@@ -9,9 +9,17 @@ namespace PermissionAuth.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
+    [ApiExplorerSettings(GroupName = "Account")]
     public class AccountController(ApplicationDbContext _context, CheckPassword _check, GenrateToken _token) : ControllerBase
     {
+        /// <summary>
+        /// This Endpoint is for Login
+        /// </summary>
+        /// <param name="login"> LoginDto </param>
+        /// <returns>Generate Jwt Bearer Token</returns>
         [HttpPost("Login")]
+        [ProducesResponseType(StatusCodes.Status200OK)]
+        [ProducesResponseType(StatusCodes.Status400BadRequest)]
         public async Task<IActionResult> Login(LoginDto login)
         {
             try

@@ -3,52 +3,32 @@
   "WorkspaceRootPath": "C:\\Users\\Ahmed Ramzy\\source\\repos\\AuthCourse\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{6631AF01-4867-467D-BED1-88F0EE2EC64C}|PermissionBasedAuth\\PermissionBasedAuth.csproj|c:\\users\\ahmed ramzy\\source\\repos\\authcourse\\permissionbasedauth\\controllers\\accountcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{6631AF01-4867-467D-BED1-88F0EE2EC64C}|PermissionBasedAuth\\PermissionBasedAuth.csproj|solutionrelative:permissionbasedauth\\controllers\\accountcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{A381C075-B2EC-4969-92F0-3DF7531D3BDB}|PermissionAuth\\PermissionAuth.csproj|c:\\users\\ahmed ramzy\\source\\repos\\authcourse\\permissionauth\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A381C075-B2EC-4969-92F0-3DF7531D3BDB}|PermissionAuth\\PermissionAuth.csproj|solutionrelative:permissionauth\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{6631AF01-4867-467D-BED1-88F0EE2EC64C}|PermissionBasedAuth\\PermissionBasedAuth.csproj|c:\\users\\ahmed ramzy\\source\\repos\\authcourse\\permissionbasedauth\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{6631AF01-4867-467D-BED1-88F0EE2EC64C}|PermissionBasedAuth\\PermissionBasedAuth.csproj|solutionrelative:permissionbasedauth\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{A381C075-B2EC-4969-92F0-3DF7531D3BDB}|PermissionAuth\\PermissionAuth.csproj|c:\\users\\ahmed ramzy\\source\\repos\\authcourse\\permissionauth\\config.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
+      "RelativeMoniker": "D:0:0:{A381C075-B2EC-4969-92F0-3DF7531D3BDB}|PermissionAuth\\PermissionAuth.csproj|solutionrelative:permissionauth\\config.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{6631AF01-4867-467D-BED1-88F0EE2EC64C}|PermissionBasedAuth\\PermissionBasedAuth.csproj|c:\\users\\ahmed ramzy\\source\\repos\\authcourse\\permissionbasedauth\\views\\shared\\error.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{6631AF01-4867-467D-BED1-88F0EE2EC64C}|PermissionBasedAuth\\PermissionBasedAuth.csproj|solutionrelative:permissionbasedauth\\views\\shared\\error.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+      "AbsoluteMoniker": "D:0:0:{A381C075-B2EC-4969-92F0-3DF7531D3BDB}|PermissionAuth\\PermissionAuth.csproj|c:\\users\\ahmed ramzy\\source\\repos\\authcourse\\permissionauth\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
+      "RelativeMoniker": "D:0:0:{A381C075-B2EC-4969-92F0-3DF7531D3BDB}|PermissionAuth\\PermissionAuth.csproj|solutionrelative:permissionauth\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{6631AF01-4867-467D-BED1-88F0EE2EC64C}|PermissionBasedAuth\\PermissionBasedAuth.csproj|c:\\users\\ahmed ramzy\\source\\repos\\authcourse\\permissionbasedauth\\views\\shared\\_layout.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{6631AF01-4867-467D-BED1-88F0EE2EC64C}|PermissionBasedAuth\\PermissionBasedAuth.csproj|solutionrelative:permissionbasedauth\\views\\shared\\_layout.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+      "AbsoluteMoniker": "D:0:0:{A381C075-B2EC-4969-92F0-3DF7531D3BDB}|PermissionAuth\\PermissionAuth.csproj|c:\\users\\ahmed ramzy\\source\\repos\\authcourse\\permissionauth\\appsettings.development.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
+      "RelativeMoniker": "D:0:0:{A381C075-B2EC-4969-92F0-3DF7531D3BDB}|PermissionAuth\\PermissionAuth.csproj|solutionrelative:permissionauth\\appsettings.development.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{6631AF01-4867-467D-BED1-88F0EE2EC64C}|PermissionBasedAuth\\PermissionBasedAuth.csproj|c:\\users\\ahmed ramzy\\source\\repos\\authcourse\\permissionbasedauth\\views\\shared\\_validationscriptspartial.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{6631AF01-4867-467D-BED1-88F0EE2EC64C}|PermissionBasedAuth\\PermissionBasedAuth.csproj|solutionrelative:permissionbasedauth\\views\\shared\\_validationscriptspartial.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{6631AF01-4867-467D-BED1-88F0EE2EC64C}|PermissionBasedAuth\\PermissionBasedAuth.csproj|c:\\users\\ahmed ramzy\\source\\repos\\authcourse\\permissionbasedauth\\views\\_viewimports.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{6631AF01-4867-467D-BED1-88F0EE2EC64C}|PermissionBasedAuth\\PermissionBasedAuth.csproj|solutionrelative:permissionbasedauth\\views\\_viewimports.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{6631AF01-4867-467D-BED1-88F0EE2EC64C}|PermissionBasedAuth\\PermissionBasedAuth.csproj|c:\\users\\ahmed ramzy\\source\\repos\\authcourse\\permissionbasedauth\\views\\_viewstart.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{6631AF01-4867-467D-BED1-88F0EE2EC64C}|PermissionBasedAuth\\PermissionBasedAuth.csproj|solutionrelative:permissionbasedauth\\views\\_viewstart.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{6631AF01-4867-467D-BED1-88F0EE2EC64C}|PermissionBasedAuth\\PermissionBasedAuth.csproj|c:\\users\\ahmed ramzy\\source\\repos\\authcourse\\permissionbasedauth\\filter\\permissionfilter.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{6631AF01-4867-467D-BED1-88F0EE2EC64C}|PermissionBasedAuth\\PermissionBasedAuth.csproj|solutionrelative:permissionbasedauth\\filter\\permissionfilter.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{6631AF01-4867-467D-BED1-88F0EE2EC64C}|PermissionBasedAuth\\PermissionBasedAuth.csproj|c:\\users\\ahmed ramzy\\source\\repos\\authcourse\\permissionbasedauth\\controllers\\usercontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{6631AF01-4867-467D-BED1-88F0EE2EC64C}|PermissionBasedAuth\\PermissionBasedAuth.csproj|solutionrelative:permissionbasedauth\\controllers\\usercontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{6631AF01-4867-467D-BED1-88F0EE2EC64C}|PermissionBasedAuth\\PermissionBasedAuth.csproj|c:\\users\\ahmed ramzy\\source\\repos\\authcourse\\permissionbasedauth\\filter\\authorizationhelper.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{6631AF01-4867-467D-BED1-88F0EE2EC64C}|PermissionBasedAuth\\PermissionBasedAuth.csproj|solutionrelative:permissionbasedauth\\filter\\authorizationhelper.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{6631AF01-4867-467D-BED1-88F0EE2EC64C}|PermissionBasedAuth\\PermissionBasedAuth.csproj|c:\\users\\ahmed ramzy\\source\\repos\\authcourse\\permissionbasedauth\\filter\\permissionfilterfactory.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{6631AF01-4867-467D-BED1-88F0EE2EC64C}|PermissionBasedAuth\\PermissionBasedAuth.csproj|solutionrelative:permissionbasedauth\\filter\\permissionfilterfactory.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{A381C075-B2EC-4969-92F0-3DF7531D3BDB}|PermissionAuth\\PermissionAuth.csproj|c:\\users\\ahmed ramzy\\source\\repos\\authcourse\\permissionauth\\properties\\launchsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
+      "RelativeMoniker": "D:0:0:{A381C075-B2EC-4969-92F0-3DF7531D3BDB}|PermissionAuth\\PermissionAuth.csproj|solutionrelative:permissionauth\\properties\\launchsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{6631AF01-4867-467D-BED1-88F0EE2EC64C}|PermissionBasedAuth\\PermissionBasedAuth.csproj|c:\\users\\ahmed ramzy\\source\\repos\\authcourse\\permissionbasedauth\\controllers\\rolecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{6631AF01-4867-467D-BED1-88F0EE2EC64C}|PermissionBasedAuth\\PermissionBasedAuth.csproj|solutionrelative:permissionbasedauth\\controllers\\rolecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{6631AF01-4867-467D-BED1-88F0EE2EC64C}|PermissionBasedAuth\\PermissionBasedAuth.csproj|c:\\users\\ahmed ramzy\\source\\repos\\authcourse\\permissionbasedauth\\views\\role\\addclaims.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{6631AF01-4867-467D-BED1-88F0EE2EC64C}|PermissionBasedAuth\\PermissionBasedAuth.csproj|solutionrelative:permissionbasedauth\\views\\role\\addclaims.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{6631AF01-4867-467D-BED1-88F0EE2EC64C}|PermissionBasedAuth\\PermissionBasedAuth.csproj|c:\\users\\ahmed ramzy\\source\\repos\\authcourse\\permissionbasedauth\\seeding\\identityseeding.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -62,7 +42,7 @@
       "DocumentGroups": [
         {
           "DockedWidth": 161,
-          "SelectedChildIndex": 4,
+          "SelectedChildIndex": 9,
           "Children": [
             {
               "$type": "Bookmark",
@@ -82,177 +62,112 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "AccountController.cs",
-              "DocumentMoniker": "C:\\Users\\Ahmed Ramzy\\source\\repos\\AuthCourse\\PermissionBasedAuth\\Controllers\\AccountController.cs",
-              "RelativeDocumentMoniker": "PermissionBasedAuth\\Controllers\\AccountController.cs",
-              "ToolTip": "C:\\Users\\Ahmed Ramzy\\source\\repos\\AuthCourse\\PermissionBasedAuth\\Controllers\\AccountController.cs",
-              "RelativeToolTip": "PermissionBasedAuth\\Controllers\\AccountController.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAACQAAAANAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-07-15T20:39:54.965Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "Error.cshtml",
-              "DocumentMoniker": "C:\\Users\\Ahmed Ramzy\\source\\repos\\AuthCourse\\PermissionBasedAuth\\Views\\Shared\\Error.cshtml",
-              "RelativeDocumentMoniker": "PermissionBasedAuth\\Views\\Shared\\Error.cshtml",
-              "ToolTip": "C:\\Users\\Ahmed Ramzy\\source\\repos\\AuthCourse\\PermissionBasedAuth\\Views\\Shared\\Error.cshtml",
-              "RelativeToolTip": "PermissionBasedAuth\\Views\\Shared\\Error.cshtml",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2025-07-15T20:36:55.362Z",
+              "DocumentIndex": 1,
+              "Title": "Config.json",
+              "DocumentMoniker": "C:\\Users\\Ahmed Ramzy\\source\\repos\\AuthCourse\\PermissionAuth\\Config.json",
+              "RelativeDocumentMoniker": "PermissionAuth\\Config.json",
+              "ToolTip": "C:\\Users\\Ahmed Ramzy\\source\\repos\\AuthCourse\\PermissionAuth\\Config.json*",
+              "RelativeToolTip": "PermissionAuth\\Config.json*",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAkAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
+              "WhenOpened": "2025-07-25T14:22:47.422Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 6,
-              "Title": "_ViewStart.cshtml",
-              "DocumentMoniker": "C:\\Users\\Ahmed Ramzy\\source\\repos\\AuthCourse\\PermissionBasedAuth\\Views\\_ViewStart.cshtml",
-              "RelativeDocumentMoniker": "PermissionBasedAuth\\Views\\_ViewStart.cshtml",
-              "ToolTip": "C:\\Users\\Ahmed Ramzy\\source\\repos\\AuthCourse\\PermissionBasedAuth\\Views\\_ViewStart.cshtml",
-              "RelativeToolTip": "PermissionBasedAuth\\Views\\_ViewStart.cshtml",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Title": "AddClaims.cshtml",
+              "DocumentMoniker": "C:\\Users\\Ahmed Ramzy\\source\\repos\\AuthCourse\\PermissionBasedAuth\\Views\\Role\\AddClaims.cshtml",
+              "RelativeDocumentMoniker": "PermissionBasedAuth\\Views\\Role\\AddClaims.cshtml",
+              "ToolTip": "C:\\Users\\Ahmed Ramzy\\source\\repos\\AuthCourse\\PermissionBasedAuth\\Views\\Role\\AddClaims.cshtml",
+              "RelativeToolTip": "PermissionBasedAuth\\Views\\Role\\AddClaims.cshtml",
+              "ViewState": "AgIAAA8AAAAAAAAAAAAAAAcAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2025-07-15T20:37:09.627Z",
+              "WhenOpened": "2025-07-25T14:04:31.208Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 5,
-              "Title": "_ViewImports.cshtml",
-              "DocumentMoniker": "C:\\Users\\Ahmed Ramzy\\source\\repos\\AuthCourse\\PermissionBasedAuth\\Views\\_ViewImports.cshtml",
-              "RelativeDocumentMoniker": "PermissionBasedAuth\\Views\\_ViewImports.cshtml",
-              "ToolTip": "C:\\Users\\Ahmed Ramzy\\source\\repos\\AuthCourse\\PermissionBasedAuth\\Views\\_ViewImports.cshtml",
-              "RelativeToolTip": "PermissionBasedAuth\\Views\\_ViewImports.cshtml",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2025-07-15T20:37:03.669Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 3,
-              "Title": "_Layout.cshtml",
-              "DocumentMoniker": "C:\\Users\\Ahmed Ramzy\\source\\repos\\AuthCourse\\PermissionBasedAuth\\Views\\Shared\\_Layout.cshtml",
-              "RelativeDocumentMoniker": "PermissionBasedAuth\\Views\\Shared\\_Layout.cshtml",
-              "ToolTip": "C:\\Users\\Ahmed Ramzy\\source\\repos\\AuthCourse\\PermissionBasedAuth\\Views\\Shared\\_Layout.cshtml",
-              "RelativeToolTip": "PermissionBasedAuth\\Views\\Shared\\_Layout.cshtml",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2025-07-15T20:37:00.793Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 4,
-              "Title": "_ValidationScriptsPartial.cshtml",
-              "DocumentMoniker": "C:\\Users\\Ahmed Ramzy\\source\\repos\\AuthCourse\\PermissionBasedAuth\\Views\\Shared\\_ValidationScriptsPartial.cshtml",
-              "RelativeDocumentMoniker": "PermissionBasedAuth\\Views\\Shared\\_ValidationScriptsPartial.cshtml",
-              "ToolTip": "C:\\Users\\Ahmed Ramzy\\source\\repos\\AuthCourse\\PermissionBasedAuth\\Views\\Shared\\_ValidationScriptsPartial.cshtml",
-              "RelativeToolTip": "PermissionBasedAuth\\Views\\Shared\\_ValidationScriptsPartial.cshtml",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2025-07-15T20:36:59.157Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 10,
-              "Title": "PermissionFilterFactory.cs",
-              "DocumentMoniker": "C:\\Users\\Ahmed Ramzy\\source\\repos\\AuthCourse\\PermissionBasedAuth\\Filter\\PermissionFilterFactory.cs",
-              "RelativeDocumentMoniker": "PermissionBasedAuth\\Filter\\PermissionFilterFactory.cs",
-              "ToolTip": "C:\\Users\\Ahmed Ramzy\\source\\repos\\AuthCourse\\PermissionBasedAuth\\Filter\\PermissionFilterFactory.cs",
-              "RelativeToolTip": "PermissionBasedAuth\\Filter\\PermissionFilterFactory.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA0AAAAIAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-07-15T18:16:02.207Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 7,
-              "Title": "PermissionFilter.cs",
-              "DocumentMoniker": "C:\\Users\\Ahmed Ramzy\\source\\repos\\AuthCourse\\PermissionBasedAuth\\Filter\\PermissionFilter.cs",
-              "RelativeDocumentMoniker": "PermissionBasedAuth\\Filter\\PermissionFilter.cs",
-              "ToolTip": "C:\\Users\\Ahmed Ramzy\\source\\repos\\AuthCourse\\PermissionBasedAuth\\Filter\\PermissionFilter.cs",
-              "RelativeToolTip": "PermissionBasedAuth\\Filter\\PermissionFilter.cs",
-              "ViewState": "AgIAABUAAAAAAAAAAAAQwBoAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-07-15T18:22:11.676Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "Program.cs",
-              "DocumentMoniker": "C:\\Users\\Ahmed Ramzy\\source\\repos\\AuthCourse\\PermissionBasedAuth\\Program.cs",
-              "RelativeDocumentMoniker": "PermissionBasedAuth\\Program.cs",
-              "ToolTip": "C:\\Users\\Ahmed Ramzy\\source\\repos\\AuthCourse\\PermissionBasedAuth\\Program.cs",
-              "RelativeToolTip": "PermissionBasedAuth\\Program.cs",
-              "ViewState": "AgIAAAMAAAAAAAAAAAAAAEgAAAAMAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-07-15T20:09:28.882Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 12,
-              "Title": "IdentitySeeding.cs",
-              "DocumentMoniker": "C:\\Users\\Ahmed Ramzy\\source\\repos\\AuthCourse\\PermissionBasedAuth\\Seeding\\IdentitySeeding.cs",
-              "RelativeDocumentMoniker": "PermissionBasedAuth\\Seeding\\IdentitySeeding.cs",
-              "ToolTip": "C:\\Users\\Ahmed Ramzy\\source\\repos\\AuthCourse\\PermissionBasedAuth\\Seeding\\IdentitySeeding.cs",
-              "RelativeToolTip": "PermissionBasedAuth\\Seeding\\IdentitySeeding.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAACMAAAA8AAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-07-15T20:21:48.841Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 9,
-              "Title": "AuthorizationHelper.cs",
-              "DocumentMoniker": "C:\\Users\\Ahmed Ramzy\\source\\repos\\AuthCourse\\PermissionBasedAuth\\Filter\\AuthorizationHelper.cs",
-              "RelativeDocumentMoniker": "PermissionBasedAuth\\Filter\\AuthorizationHelper.cs",
-              "ToolTip": "C:\\Users\\Ahmed Ramzy\\source\\repos\\AuthCourse\\PermissionBasedAuth\\Filter\\AuthorizationHelper.cs",
-              "RelativeToolTip": "PermissionBasedAuth\\Filter\\AuthorizationHelper.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABUAAAAIAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-07-15T18:23:27.65Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 11,
               "Title": "RoleController.cs",
               "DocumentMoniker": "C:\\Users\\Ahmed Ramzy\\source\\repos\\AuthCourse\\PermissionBasedAuth\\Controllers\\RoleController.cs",
               "RelativeDocumentMoniker": "PermissionBasedAuth\\Controllers\\RoleController.cs",
               "ToolTip": "C:\\Users\\Ahmed Ramzy\\source\\repos\\AuthCourse\\PermissionBasedAuth\\Controllers\\RoleController.cs",
               "RelativeToolTip": "PermissionBasedAuth\\Controllers\\RoleController.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAG4AAAA3AAAAAAAAAA==",
+              "ViewState": "AgIAAF8AAAAAAAAAAAAqwGIAAAA7AAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-07-15T20:08:28.119Z",
+              "WhenOpened": "2025-07-25T13:49:18.068Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 8,
-              "Title": "UserController.cs",
-              "DocumentMoniker": "C:\\Users\\Ahmed Ramzy\\source\\repos\\AuthCourse\\PermissionBasedAuth\\Controllers\\UserController.cs",
-              "RelativeDocumentMoniker": "PermissionBasedAuth\\Controllers\\UserController.cs",
-              "ToolTip": "C:\\Users\\Ahmed Ramzy\\source\\repos\\AuthCourse\\PermissionBasedAuth\\Controllers\\UserController.cs",
-              "RelativeToolTip": "PermissionBasedAuth\\Controllers\\UserController.cs",
-              "ViewState": "AgIAAAYAAAAAAAAAAAAAACQAAAAIAAAAAAAAAA==",
+              "DocumentIndex": 7,
+              "Title": "IdentitySeeding.cs",
+              "DocumentMoniker": "C:\\Users\\Ahmed Ramzy\\source\\repos\\AuthCourse\\PermissionBasedAuth\\Seeding\\IdentitySeeding.cs",
+              "RelativeDocumentMoniker": "PermissionBasedAuth\\Seeding\\IdentitySeeding.cs",
+              "ToolTip": "C:\\Users\\Ahmed Ramzy\\source\\repos\\AuthCourse\\PermissionBasedAuth\\Seeding\\IdentitySeeding.cs",
+              "RelativeToolTip": "PermissionBasedAuth\\Seeding\\IdentitySeeding.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAsAAAAJAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-07-15T20:08:46.274Z",
+              "WhenOpened": "2025-07-25T13:45:55.766Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "launchSettings.json",
+              "DocumentMoniker": "C:\\Users\\Ahmed Ramzy\\source\\repos\\AuthCourse\\PermissionAuth\\Properties\\launchSettings.json",
+              "RelativeDocumentMoniker": "PermissionAuth\\Properties\\launchSettings.json",
+              "ToolTip": "C:\\Users\\Ahmed Ramzy\\source\\repos\\AuthCourse\\PermissionAuth\\Properties\\launchSettings.json",
+              "RelativeToolTip": "PermissionAuth\\Properties\\launchSettings.json",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABQAAAAGAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
+              "WhenOpened": "2025-07-25T13:30:43.958Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "Program.cs",
+              "DocumentMoniker": "C:\\Users\\Ahmed Ramzy\\source\\repos\\AuthCourse\\PermissionAuth\\Program.cs",
+              "RelativeDocumentMoniker": "PermissionAuth\\Program.cs",
+              "ToolTip": "C:\\Users\\Ahmed Ramzy\\source\\repos\\AuthCourse\\PermissionAuth\\Program.cs",
+              "RelativeToolTip": "PermissionAuth\\Program.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABMAAAAMAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-07-25T13:24:56.873Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "appsettings.json",
+              "DocumentMoniker": "C:\\Users\\Ahmed Ramzy\\source\\repos\\AuthCourse\\PermissionAuth\\appsettings.json",
+              "RelativeDocumentMoniker": "PermissionAuth\\appsettings.json",
+              "ToolTip": "C:\\Users\\Ahmed Ramzy\\source\\repos\\AuthCourse\\PermissionAuth\\appsettings.json",
+              "RelativeToolTip": "PermissionAuth\\appsettings.json",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAUAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
+              "WhenOpened": "2025-07-25T13:24:47.947Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "appsettings.Development.json",
+              "DocumentMoniker": "C:\\Users\\Ahmed Ramzy\\source\\repos\\AuthCourse\\PermissionAuth\\appsettings.Development.json",
+              "RelativeDocumentMoniker": "PermissionAuth\\appsettings.Development.json",
+              "ToolTip": "C:\\Users\\Ahmed Ramzy\\source\\repos\\AuthCourse\\PermissionAuth\\appsettings.Development.json",
+              "RelativeToolTip": "PermissionAuth\\appsettings.Development.json",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAgAAAACAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
+              "WhenOpened": "2025-07-25T13:24:45.473Z",
               "EditorCaption": ""
             }
           ]
         },
         {
-          "DockedWidth": 331,
+          "DockedWidth": 200,
           "SelectedChildIndex": -1,
           "Children": [
             {
